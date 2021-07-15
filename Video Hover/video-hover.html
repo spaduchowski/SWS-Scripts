@@ -1,0 +1,77 @@
+<style>
+    #video-cols {
+        margin-top: -1px;
+        height: 100vh;
+    }
+    #video-cols ul{
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+    }
+
+    #video-cols ul li {
+        flex: 1 1 33.3%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #video-cols ul li:hover img{
+        opacity: 0;
+    }    
+
+    #video-cols ul li img{
+        opacity: 1;
+        -webkit-transition: opacity 0.3s ease;
+        -moz-transition: opacity 0.3s ease;
+        -o-transition: opacity 0.3s ease;
+        -ms-transition: opacity 0.3s ease;
+        transition: opacity 0.3s ease;
+        position: relative;
+        z-index: 1;
+        height: 100vh;
+        object-fit: cover;
+    }   
+
+    #video-cols ul li video {
+        position: absolute;
+        top: 0;
+        margin: auto;
+        left: 0;
+        right: 0;
+        height: 100%;
+        object-fit: cover;
+    }
+
+</style>
+
+<div id="video-cols">
+    <ul>
+        <li id="li1"><img src="//bbk12e1-cdn.myschoolcdn.com/ftpimages/286/site/1449/images/1b.jpg" alt=""><video id="vid1"
+            src="https://whdesign-whipplehill-com.s3.amazonaws.com/Catholic+Memorial/PROJ13342/videos/video.mp4" muted pause loop poster="//bbk12e1-cdn.myschoolcdn.com/ftpimages/286/site/1449/images/1b.jpg"></video></li>
+        <li id="li2"><img src="//bbk12e1-cdn.myschoolcdn.com/ftpimages/286/site/1449/images/2.jpg" alt=""><video id="vid2"
+            src="https://whdesign-whipplehill-com.s3.amazonaws.com/Catholic+Memorial/PROJ13342/videos/2.mp4" muted pause loop poster="//bbk12e1-cdn.myschoolcdn.com/ftpimages/286/site/1449/images/2.jpg"></video></li>
+        <li id="li3"><img src="//bbk12e1-cdn.myschoolcdn.com/ftpimages/286/site/1449/images/3b.jpg" alt=""><video id="vid3"
+            src="https://whdesign-whipplehill-com.s3.amazonaws.com/Catholic+Memorial/PROJ13342/videos/3.mp4" muted pause loop poster="//bbk12e1-cdn.myschoolcdn.com/ftpimages/286/site/1449/images/3b.jpg"></video></li>
+    </ul>
+</div>
+
+<script>
+    let li1 = document.getElementById('li1');
+    let li2 = document.getElementById('li2');
+    let li3 = document.getElementById('li3');
+
+    let vid1 = document.getElementById('vid1');
+    let vid2 = document.getElementById('vid2');
+    let vid3 = document.getElementById('vid3');
+
+    li1.onmouseover = () => vid1.play();
+    li2.onmouseover = () => vid2.play();
+    li3.onmouseover = () => vid3.play();
+
+    li1.onmouseout = () => vid1.pause();
+    li2.onmouseout = () => vid2.pause();
+    li3.onmouseout = () => vid3.pause();
+
+</script>

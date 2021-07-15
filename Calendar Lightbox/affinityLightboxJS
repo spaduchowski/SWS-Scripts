@@ -1,0 +1,18 @@
+var affinityDetails;
+function loadAffinityDetails() {
+    var theStyle = ".style-80609";
+
+    $(theStyle + ' li.group').each(function() {
+        $(this).wrap('<a href="#" />');
+    });
+
+    $(theStyle + ' .content-wrap a').on('click', function(e) {
+        e.preventDefault();
+        var affinityDetails = $(this).html();
+        var affinityDetails = '<div class="affinity-popup"><ul>' + affinityDetails + '</ul></div>';
+        //alert("test");
+        SimpleLightbox.open({
+            content: affinityDetails
+        });
+    });
+}  loadAffinityDetails();

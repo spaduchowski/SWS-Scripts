@@ -1,0 +1,65 @@
+This script create lightbox functionality for a Photo block. 
+
+Notes
+There is no thumbnail photo. The same photo that is displayed in the lightbox appears on the page.
+It is up to you to style the appearance of the photos on the page.
+The lightbox controls can be styled in Custom CSS, but will need important declarations. 
+The lightbox will only display the Title, not Caption or Tags.
+The Album Select can be turned on in the style to display different galleries.
+
+Example
+https://stevessite-programmer.onmessagestaging.com/photo-block-lightbox
+
+How to Use
+Place all of the code below in an Embed widget at the bottom of your page or master layout. Replace the yourStyle variable with the style you created.
+
+
+<!-- SimpleLightbox JS-->
+<script type="text/javascript" src="//whthemes.myschoolapp.com/ftpimages/492/download/download_6227162.js"></script>
+<!-- SimpleLightbox CSS-->
+<link rel="stylesheet" type="text/css" href="//whthemes.myschoolapp.com/ftpimages/492/download/download_6227163.css">
+<!-- SWS Photo Block JS -->
+<script type="text/javascript" src="//whthemes.myschoolapp.com/ftpimages/492/download/download_6227164.js"></script>
+
+<script>
+    head.ready(function() {
+        //place your photo style here 
+        var yourStyle = '.style-#####';  
+        photoBlockLightBox(yourStyle);
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+Multiple Instances on Page
+The script can be applied to multiple photo blocks on the page by creating an additional style and calling it in the script as shown below. 
+
+<!-- SimpleLightbox JS-->
+<script type="text/javascript" src="//whthemes.myschoolapp.com/ftpimages/492/download/download_6227162.js"></script>
+<!-- SimpleLightbox CSS-->
+<link rel="stylesheet" type="text/css" href="//whthemes.myschoolapp.com/ftpimages/492/download/download_6227163.css">
+<!-- SWS Photo Block JS -->
+<script type="text/javascript" src="//whthemes.myschoolapp.com/ftpimages/492/download/download_6227164.js"></script>
+
+<script>
+    head.ready(function() {
+        //place your photo style here 
+        var yourStyle = '.style-#####';  
+        photoBlockLightBox(yourStyle);
+
+        //place your second photo style here 
+        var yourStyle = '.style-#####';  
+        photoBlockLightBox(yourStyle);
+
+        //place your third photo style here 
+        var yourStyle = '.style-#####';  
+        photoBlockLightBox(yourStyle);
+    });
+</script>

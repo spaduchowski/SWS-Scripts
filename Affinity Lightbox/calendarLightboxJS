@@ -1,0 +1,17 @@
+var calendarDetails;
+function loadCalendarDetails() {
+    var theStyle = ".style-80329";
+
+    $(theStyle + ' .event').each(function() {
+        $(this).wrap('<a href="#" />');
+    });
+
+    $(theStyle + ' .event-data a').on('click', function(e) {
+        e.preventDefault();
+        var calendarDetails = $(this).html();
+        //alert("test");
+        SimpleLightbox.open({
+            content: calendarDetails
+        });
+    });
+}  loadCalendarDetails();

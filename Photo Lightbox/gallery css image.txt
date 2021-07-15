@@ -1,0 +1,10 @@
+
+
+gallery css image setup
+
+    object-position: center;
+    object-fit: cover;
+    position: relative;
+    width: 100%;
+    display: block;
+    height: 250px;
