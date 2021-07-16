@@ -2,7 +2,7 @@ function directoryLightboxGlobal() {
 
         $('.faculty-staff-list .biobutton').on('click', function() {
 
-            //set email address
+            //set email address for obscure
             var getHref = $(this).closest('div').find('.email');
             var getHref = getHref.children('a');
             var newMailto = 'mailto:' + getHref.attr('data-username') + "@" + getHref.attr("data-domain");
