@@ -61,7 +61,7 @@ function listTabs(listTabsStyle) {
             $(theStyle).css('height', totalHeight);       
             
             $("#tabs li").click(function(){
-                var clickHeight = $(theStyle + ' li.group').outerHeight(true);
+                var clickHeight = $(theStyle + ' li.group').outerHeight();
                 var clickHeight = getH2 + clickHeight + $(this).find('.brief-description').outerHeight();
                 $(theStyle).css('height', clickHeight);       
             });
