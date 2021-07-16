@@ -40,9 +40,10 @@ function listTabs(listTabsStyle) {
             $(this).addClass("active"); 
         });
 
+        var getH2 = $(theStyle + ' .lists > h2').outerHeight();
         var firstTab = $(theStyle + ' li.group').first().find('.brief-description');
         var firstHeight = firstTab.outerHeight();
-        var firstTotal = firstHeight + $(theStyle + ' li.group').outerHeight();
+        var firstTotal = getH2 + firstHeight + $(theStyle + ' li.group').outerHeight();
         $(theStyle).css('height', firstTotal);  
 
     }  createTabs();
