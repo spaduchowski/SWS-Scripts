@@ -40,7 +40,7 @@ function listTabs(listTabsStyle) {
             $(this).addClass("active"); 
         });
 
-        var getH2 = $(theStyle + ' .lists > h2').outerHeight();
+        var getH2 = $(theStyle + ' .lists > h2').outerHeight(true);
         var firstTab = $(theStyle + ' li.group').first().find('.brief-description');
         var firstHeight = firstTab.outerHeight();
         var firstTotal = getH2 + firstHeight + $(theStyle + ' li.group').outerHeight();
@@ -55,13 +55,14 @@ function listTabs(listTabsStyle) {
         if ($(window).width() >= 769) {
     
             //set container height for active
+            var getH2 = $(theStyle + ' .lists > h2').outerHeight(true);
             var totalHeight = $(theStyle + ' li.group.active').outerHeight();
-            var totalHeight = totalHeight + $(theStyle + ' li.group.active .brief-description').outerHeight();        
+            var totalHeight = getH2 + totalHeight + $(theStyle + ' li.group.active .brief-description').outerHeight();        
             $(theStyle).css('height', totalHeight);       
             
             $("#tabs li").click(function(){
-                var clickHeight = $(theStyle + ' li.group').outerHeight();
-                var clickHeight = clickHeight + $(this).find('.brief-description').outerHeight();
+                var clickHeight = $(theStyle + ' li.group').outerHeight(true);
+                var clickHeight = getH2 + clickHeight + $(this).find('.brief-description').outerHeight();
                 $(theStyle).css('height', clickHeight);       
             });
 
