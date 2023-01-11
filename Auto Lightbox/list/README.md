@@ -1,3 +1,61 @@
+# Implementation Instructions
+Place the following code in the Head Tracking Code box in Site Settings.
+
+`<!-- SimpleLightbox JS-->`
+`<script type="text/javascript" src="//whthemes.myschoolapp.com/ftpimages/492/download/download_8162735.js"></script>`
+`<!-- SimpleLightbox CSS-->`
+`<link rel="stylesheet" type="text/css" href="//whthemes.myschoolapp.com/ftpimages/492/download/download_8162736.css">`
+
+`<!--auto event lightbox-->`
+`<script src="//whthemes.myschoolapp.com/ftpimages/492/download/download_8160981.js" defer=""></script>`
+`<script>`
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`document.addEventListener("DOMContentLoaded", function () {`
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`createAutoListLightbox(87448, 'autolightbox', 2);`
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`});`
+`</script>`
+
+### General Notes
+- There are three required parameters for the createAutoEventLightbox function.
+- The first is your style number.
+- The second is the class name given to the outermost div of the lightbox. (autolightbox is used in below CSS - this can be whatever you want)
+- The third is the delay in seconds. (currently set to 2 seconds - half seconds or decimals will not work)
+<br>
+- If a user clicks the Stop Showing This Popup link, it will no longer display.
+- If the school makes changes to List Title, Brief or Long Description, the popup will once again display for any user who clicked the Stop Showing This Popup link.
+
+### CSS
+- The majority of styling can be completed in the style you have created for the lightbox.
+- There is no background color by default. Add the background color to your style container.
+- Set the Header to display none in your style.
+- The below CSS should be added to Custom CSS. See comments for explanation. 
+
+`/* Begin Auto Lightbox Styles */` 
+
+
+`/* Adjust Width of Lightbox  */`
+`.autolightbox .slbContent {`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`width: clamp(40vw, 400px, 95vw);`  
+`}`
+
+`/* Display Page Block Content in Styler, Not Page*/`
+`.style-101677 {`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`display: none;`
+`}`
+`.styler .style-101677 {`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`display: block;`
+`}`
+
+`/* Display Page Block Content in Lightbox */`
+`.slbWrapOuter .style-101677 {`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`display: block;`
+`}`
+
+`/* Stop Showing Link Div, Style as needed*/`
+`.stop-showing {`
+`}`
+
+<br><br>
+
 ## Auto List Lightbox User Instructions
 *Boilerplate instructions to send to school. You will likely need to edit category and style names in steps below. They are marked with an asterisk.*
 
