@@ -14,12 +14,13 @@ Place the following code in the Head Tracking Code box in Site Settings.
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`});`<br>
 `</script>`
 
-### General Notes
+### Settings
 - There are three required parameters for the createAutoEventLightbox function.
 - The first is your style number.
 - The second is the class name given to the outermost div of the lightbox. (autolightbox is used in below CSS, but this can be whatever you want)
 - The third is the delay in seconds. (currently set to 2 seconds - half seconds or decimals will not work)
-<br>
+
+### General Notes
 - The lightbox will display during the date and time selected in event widget.
 - Start Date and End Date are required fields. Start Time and End Time are optional.
 - If a user clicks the Stop Showing This Popup link, it will no longer display.
@@ -34,26 +35,26 @@ Place the following code in the Head Tracking Code box in Site Settings.
 `/* Begin Auto Lightbox Styles */` 
 
 
-`/* Adjust Width of Lightbox  */`
-`.autolightbox .slbContent {`  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`width: clamp(40vw, 400px, 95vw);`  
+`/* Adjust Width of Lightbox  */`<br>
+`.autolightbox .slbContent {`<br>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`width: clamp(40vw, 400px, 95vw);`<br>  
 `}`
 
-`/* Display Page Block Content in Styler, Not Page*/`
-`.style-101677 {`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`display: none;`
-`}`
-`.styler .style-101677 {`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`display: block;`
-`}`
-
-`/* Display Page Block Content in Lightbox */`
-`.slbWrapOuter .style-101677 {`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`display: block;`
+`/* Display Page Block Content in Styler, Not Page*/`<br>
+`.style-101677 {`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`display: none;`<br>
+`}`<br>
+`.styler .style-101677 {`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`display: block;`<br>
 `}`
 
-`/* Stop Showing Link Div, Style as needed*/`
-`.stop-showing {`
+`/* Display Page Block Content in Lightbox */`<br>
+`.slbWrapOuter .style-101677 {`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`display: block;`<br>
+`}`
+
+`/* Stop Showing Link Div, Style as needed*/`<br>
+`.stop-showing {`<br>
 `}`
 
 <br><br>
