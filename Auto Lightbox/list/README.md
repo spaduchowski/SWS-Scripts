@@ -34,7 +34,7 @@ Place the following code in the Head Tracking Code box in Site Settings.
 
 
 `/* Adjust Width of Lightbox  */`<br>
-`.autolightbox .slbContent {`<br>  
+`.autolightbox .slbContent {`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`width: clamp(40vw, 400px, 95vw);`<br>
 `}`
 
