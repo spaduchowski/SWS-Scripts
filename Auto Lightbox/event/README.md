@@ -1,18 +1,20 @@
 # Implementation Instructions
 Place the following code in the Head Tracking Code box in Site Settings.
 
-`<!-- SimpleLightbox JS-->`<br>
-`<script type="text/javascript" src="//whthemes.myschoolapp.com/ftpimages/492/download/download_8162735.js"></script>`<br>
-`<!-- SimpleLightbox CSS-->`<br>
-`<link rel="stylesheet" type="text/css" href="//whthemes.myschoolapp.com/ftpimages/492/download/download_8162736.css">`<br>
+```html
+<!-- SimpleLightbox JS-->
+<script type="text/javascript" src="//whthemes.myschoolapp.com/ftpimages/492/download/download_8162735.js"></script>
+<!-- SimpleLightbox CSS-->
+<link rel="stylesheet" type="text/css" href="//whthemes.myschoolapp.com/ftpimages/492/download/download_8162736.css">
 
-`<!--auto event lightbox-->`<br>
-`<script src="//whthemes.myschoolapp.com/ftpimages/492/download/download_8160978.js" defer=""></script>`<br>
-`<script>`<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`document.addEventListener("DOMContentLoaded", function () {`<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`createAutoEventLightbox(87448, 'autolightbox', 2);`<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`});`<br>
-`</script>`
+<!--auto event lightbox-->
+<script src="//whthemes.myschoolapp.com/ftpimages/492/download/download_8160978.js" defer=""></script>
+<script>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.addEventListener("DOMContentLoaded", function () {
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;createAutoEventLightbox(87448, 'autolightbox', 2);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+</script>
+```
 
 ### Settings
 - There are three required parameters for the createAutoEventLightbox function.
@@ -32,31 +34,32 @@ Place the following code in the Head Tracking Code box in Site Settings.
 - Set the Header to display none in your style.
 - The below CSS should be added to Custom CSS. See comments for explanation. 
 
-`/* Begin Auto Lightbox Styles */` 
+```css
+/* Begin Auto Lightbox Styles */
 
 
-`/* Adjust Width of Lightbox  */`<br>
-`.autolightbox .slbContent {`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`width: clamp(40vw, 400px, 95vw);`<br>
-`}`
+/* Adjust Width of Lightbox  */
+.autolightbox .slbContent {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: clamp(40vw, 400px, 95vw);
+}
 
-`/* Display Page Block Content in Styler, Not Page*/`<br>
-`.style-101677 {`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`display: none;`<br>
-`}`<br>
-`.styler .style-101677 {`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`display: block;`<br>
-`}`
+/* Display Page Block Content in Styler, Not Page*/
+.style-101677 {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: none;
+}
+.styler .style-101677 {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: block;
+}
 
-`/* Display Page Block Content in Lightbox */`<br>
-`.slbWrapOuter .style-101677 {`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`display: block;`<br>
-`}`
+/* Display Page Block Content in Lightbox */
+.slbWrapOuter .style-101677 {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: block;
+}
 
-`/* Stop Showing Link Div, Style as needed*/`<br>
-`.stop-showing {`<br>
-`}`
-
+/* Stop Showing Link Div, Style as needed*/
+.stop-showing {
+}
+```
 <br><br>
 
 # Auto Event Lightbox User Instructions
