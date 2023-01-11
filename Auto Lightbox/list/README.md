@@ -10,9 +10,9 @@ Place the following code in the Head Tracking Code box in Site Settings.
 <!--auto event lightbox-->
 <script src="//whthemes.myschoolapp.com/ftpimages/492/download/download_8160981.js" defer=""></script>
 <script>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.addEventListener("DOMContentLoaded", function () {
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;createAutoListLightbox(87448, 'autolightbox', 2);
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+    document.addEventListener("DOMContentLoaded", function () {
+        createAutoListLightbox(87448, 'autolightbox', 2);
+    });
 </script>
 ```
 
@@ -37,20 +37,20 @@ Place the following code in the Head Tracking Code box in Site Settings.
 
 /* Adjust Width of Lightbox  */
 .autolightbox .slbContent {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: clamp(40vw, 400px, 95vw);
+    width: clamp(40vw, 400px, 95vw);
 }
 
 /* Display Page Block Content in Styler, Not Page*/
 .style-101677 {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: none;
+    display: none;
 }
 .styler .style-101677 {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: block;
+    display: block;
 }
 
 /* Display Page Block Content in Lightbox */
 .slbWrapOuter .style-101677 {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: block;
+    display: block;
 }
 
 /* Stop Showing Link Div, Style as needed*/
