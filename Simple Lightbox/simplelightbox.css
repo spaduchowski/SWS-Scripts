@@ -48,8 +48,8 @@
   max-width: 100%;
 }
 
-.slbContentEl .slbContentOuter {
-  padding: 5em 1em;
+.slbContentOuter {
+  padding: 4rem 0;
 }
 
 .slbContent {

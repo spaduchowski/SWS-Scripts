@@ -10,14 +10,6 @@ function createAutoListLightbox(autoLightboxStyle, autoLightboxClass, autoLightb
     }   
 
     /**
-     * Get Popup Content
-     */
-    var theContent = document.querySelector(theBlockStyle).outerHTML;
-    //create stop showing link
-    var theCloseButton = '<div class="stop-showing"><a href="#" id="closeLink">Stop Showing This Popup</a></div>';
-
-
-    /**
      * Create Dynamic "Cookie" Using
      * List Title & Character Count
      */
@@ -29,7 +21,6 @@ function createAutoListLightbox(autoLightboxStyle, autoLightboxClass, autoLightb
 
     //create cookie using list title and character count
     var autoCookie = listTitle.textContent + checkListsEl;
-    console.log(autoCookie)
 
     
     /**
@@ -43,10 +34,15 @@ function createAutoListLightbox(autoLightboxStyle, autoLightboxClass, autoLightb
         closeBtnClass: 'close'
     });
 
-    //attach stop showing link
-    theContent = theContent.innerHTML = "<div>" + theContent + theCloseButton + "</div>"
-    //set content
-    autoLightbox.setContent(theContent);
+    //create div element for stop showing link and add to container
+    var z = document.createElement('div'); // is a node
+    z.innerHTML = '<a href="#" id="closeLink">Stop Showing This Popup</a></div>';
+    z.classList.add('stop-showing');
+    thePageBlock = document.querySelector(theBlockStyle);
+    thePageBlock.appendChild(z);
+
+    //set content for lightbox
+    autoLightbox.setContent(thePageBlock);
 
 
 
