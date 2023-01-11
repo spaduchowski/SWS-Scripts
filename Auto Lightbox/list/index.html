@@ -1,0 +1,2618 @@
+<!DOCTYPE html>
+<html lang="en" class="body normal">
+  <head>
+    <style class="vjs-styles-defaults">
+      .video-js {
+        width: 300px;
+        height: 150px;
+      }
+
+      .vjs-fluid {
+        padding-top: 56.25%
+      }
+    </style>
+    <title>Auto List Popup</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="noindex" name="robots">
+    <link rel="stylesheet" type="text/css" href="//libs-w2.myschoolapp.com/bootstrap/2.1.1/css/bootstrap.24col.min.css">
+    <link rel="stylesheet" type="text/css" href="//libs-w2.myschoolapp.com/jquery-flexslider/2.10/jquery.flexslider-min.css">
+    <link rel="stylesheet" type="text/css" href="//libs-w2.myschoolapp.com/video/7.4.3/video-js.css">
+    <link rel="stylesheet" type="text/css" href="//libs-w2.myschoolapp.com/jquery-background-carousel/1.2/background-carousel.css">
+    <link rel="stylesheet" type="text/css" href="//libs-w2.myschoolapp.com/jquery-jplayer/2.4.1/morning.light/jplayer.morning.light.css">
+    <link rel="stylesheet" type="text/css" href="//libs-w2.myschoolapp.com/images/jPlayer/p3.morning.light.css">
+    <link rel="stylesheet" type="text/css" href="//src-e1.myschoolapp.com/1.52.23009.9/minify/page-main.css">
+    <style type="text/css">
+      .body {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      .h1-style {
+        line-height: 1.2;
+        margin: 0 0 .5em 0;
+      }
+
+      .h2-style {
+        line-height: 1.2;
+        margin: 0 0 .5em 0;
+      }
+
+      .h3-style {
+        line-height: 1.2;
+        margin: .5em 0 .5em 0;
+      }
+
+      .h4-style {
+        line-height: 1.2;
+        margin: 0 0 .5em 0;
+      }
+
+      .h5-style {
+        line-height: 1.2;
+        margin: 0 0 .5em 0;
+      }
+
+      .h6-style {
+        line-height: 1.2;
+        margin: 0 0 .5em 0;
+      }
+
+      A {
+        color: #86CC2B;
+        text-decoration: underline;
+        -webkit-transition: color .3s ease;
+        transition: color .3s ease;
+      }
+
+      A:hover {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .button {
+        padding: .5em 1em;
+        margin: .5rem 0 .25rem 0;
+        color: #fff;
+        border: none;
+        background-color: #333;
+        -webkit-transition: background .3s ease, color .3s ease;
+        transition: background .3s ease, color .3s ease;
+      }
+
+      .button:hover {
+        color: #FFFFFF;
+        background-color: #86CC2B;
+      }
+
+      .style-63950 {
+        margin-bottom: 2.5rem;
+      }
+
+      .style-63950 time:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      .style-63950 .category-description {
+        margin-bottom: 1em;
+      }
+
+      .style-63950 .link-image {
+        margin: 0 0 .5em 0;
+        display: block;
+      }
+
+      .style-63950 .long-description {
+        margin: 0;
+      }
+
+      .style-63950 .text img {
+        margin: 0 .5em .5em 0;
+      }
+
+      .style-63950 .lists img {
+        margin-bottom: .5em;
+      }
+
+      .style-63950 .question {
+        padding-left: 1.5em;
+        position: relative;
+      }
+
+      .style-63950 .question:before {
+        content: "Q.";
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      .style-63950 .answer {
+        padding-left: 1.5em;
+        position: relative;
+      }
+
+      .style-63950 .answer:before {
+        content: "A.";
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-weight: bold;
+      }
+
+      .style-63950 .caption {
+        margin: 0;
+      }
+
+      .style-63950 .letter-label {
+        display: block;
+      }
+
+      .style-63950 .nick-name:before {
+        content: "\201C";
+      }
+
+      .style-63950 .nick-name:after {
+        content: "\201D";
+      }
+
+      .style-63950 .chart {
+        max-width: 350px !important;
+      }
+
+      .style-63950 .page-name {
+        margin-left: 2em !important;
+      }
+
+      .style-63950 .sitemap .open {
+        padding: 0 !important;
+        line-height: 1.5;
+        width: 1.5em;
+        height: 1.5em;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+      }
+
+      .style-63950 .sitemap .closed {
+        padding: 0 !important;
+        line-height: 1.5;
+        width: 1.5em;
+        height: 1.5em;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+      }
+
+      .style-63950 .team-label {
+        display: block;
+      }
+
+      .style-63950 .season-label {
+        display: block;
+      }
+
+      .style-63950 .play-button {
+        margin-bottom: 1em;
+      }
+
+      .style-63950 .album-select-form {
+        margin-bottom: .5em;
+      }
+
+      .style-63950 .school-level-label {
+        display: block;
+      }
+
+      .style-63950 .department-label {
+        display: block;
+      }
+
+      .style-63950 .grade-label {
+        display: block;
+      }
+
+      .style-63950 .greeting {
+        margin-bottom: 1em;
+      }
+
+      .style-63950 li.group {
+        margin: 1em 0 0 0;
+      }
+
+      .style-63950 li.group:first-child {
+        margin-top: 0;
+      }
+
+      .style-63950 .schedule-time {
+        text-align: right;
+      }
+
+      .style-63950 .schedule-teamname {
+        font-size: 1.25em;
+        font-weight: bold;
+      }
+
+      .style-63950 .album .photo-list {
+        margin: 0;
+      }
+
+      .style-63950 .roster-entry {
+        margin: 1em 0 0 0;
+      }
+
+      .style-63950 .roster-entry:first-child {
+        margin-top: 0;
+      }
+
+      .style-63950 .course-title A {
+        display: block;
+      }
+
+      .style-63950 .schedule-rescheduled {
+        color: #F50202;
+      }
+
+      .style-63950 .schedule-cancelled {
+        color: #F50202;
+      }
+
+      .style-63950 .button-group:first-child {
+        display: block;
+      }
+
+      .style-63950 .newsarchivedatepicker .current-year {
+        text-align: center;
+      }
+
+      .style-63950 .newsarchivedatepicker .prev-year {
+        text-decoration: none;
+      }
+
+      .style-63950 .newsarchivelist .publish-month {
+        margin-bottom: .5em;
+      }
+
+      .style-63950 .newsarchivedatepicker .next-year {
+        text-align: right;
+        text-decoration: none;
+      }
+
+      .style-63950 .large-calendar-grid .day-holder {
+        line-height: 1.2;
+      }
+
+      .style-63950 .large-calendar-grid .date {
+        padding: .25em 0 0 .25em;
+      }
+
+      .style-63950 .game {
+        margin: 1em 0 0 0;
+      }
+
+      .style-63950 .game:first-child {
+        margin-top: 0;
+      }
+
+      .style-63950 .h4-style.calendar-event-title {
+        margin: 0 0 .25em 0;
+      }
+
+      .style-63950 .grad-year-short:before {
+        content: "\2019";
+      }
+
+      .style-63950 .game .ath-row.ath-row-one {
+        font-size: 1.25em;
+        font-weight: bold;
+      }
+
+      .style-63950 .at-alert-game {
+        margin-bottom: 1em;
+      }
+
+      .style-96658 .bio {
+        display: none !important;
+      }
+
+      .style-96658 .biobutton {
+        font-size: 0;
+        background-color: transparent;
+      }
+
+      .style-96658 .biobutton:before {
+        content: 'Details';
+        display: inline-block;
+        position: relative;
+        color: #000000;
+        font-size: 1rem;
+        text-decoration: underline;
+        font-weight: 400;
+        -webkit-transition: color 0.3s ease;
+        -moz-transition: color 0.3s ease;
+        -o-transition: color 0.3s ease;
+        -ms-transition: color 0.3s ease;
+        transition: color 0.3s ease;
+        width: auto;
+        height: auto;
+      }
+
+      .style-96108 .h4-style {
+        display: none;
+      }
+
+      .style-96108 .long-description {
+        display: none;
+      }
+
+      .style-96108 .brief-description {
+        display: none;
+      }
+
+      .style-96108 .title {
+        display: none;
+      }
+
+      .style-96108 .caption {
+        display: none;
+      }
+
+      .style-96108 li.group {
+        flex: 1 1 33.3%;
+      }
+
+      .style-96220 .h4-style {
+        display: none;
+      }
+
+      .style-96220 .long-description {
+        display: none;
+      }
+
+      .style-96220 .brief-description {
+        display: none;
+      }
+
+      .style-96220 .title {
+        display: none;
+      }
+
+      .style-96220 li.group {
+        flex: 1 1 33.3%;
+      }
+
+      .style-96654 .h4-style {
+        margin: 0;
+      }
+
+      .style-96654 {
+        margin-bottom: 3.25rem;
+        position: relative;
+        min-height: 100%;
+      }
+
+      .style-96654 time:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      .style-96654 .category-description {
+        margin-bottom: 1em;
+      }
+
+      .style-96654 .link-image {
+        margin: 0 0 .5em 0;
+        display: block;
+      }
+
+      .style-96654 .h4-style A {
+        text-decoration: none;
+        padding: 10px 15px;
+        display: block;
+      }
+
+      .style-96654 .long-description {
+        margin: 0;
+      }
+
+      .style-96654 .brief-description {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        text-align: left;
+        display: none;
+        height: auto;
+        border-radius: 0 0 3px 3px;
+        padding: 20px 15px;
+        background-color: #eee;
+        color: #000;
+        clear: both;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      .style-96654 .text img {
+        margin: 0 .5em .5em 0;
+      }
+
+      .style-96654 .lists img {
+        margin-bottom: 1em;
+      }
+
+      .style-96654 .question {
+        padding-left: 1.5em;
+        position: relative;
+      }
+
+      .style-96654 .question:before {
+        content: "Q.";
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      .style-96654 .answer {
+        padding-left: 1.5em;
+        position: relative;
+      }
+
+      .style-96654 .answer:before {
+        content: "A.";
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-weight: bold;
+      }
+
+      .style-96654 .caption {
+        margin: 0;
+      }
+
+      .style-96654 .letter-label {
+        display: block;
+      }
+
+      .style-96654 .nick-name:before {
+        content: "\201C";
+      }
+
+      .style-96654 .nick-name:after {
+        content: "\201D";
+      }
+
+      .style-96654 .chart {
+        max-width: 350px !important;
+      }
+
+      .style-96654 .page-name {
+        margin-left: 2em !important;
+      }
+
+      .style-96654 .sitemap .open {
+        padding: 0 !important;
+        line-height: 1.5;
+        width: 1.5em;
+        height: 1.5em;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+      }
+
+      .style-96654 .sitemap .closed {
+        padding: 0 !important;
+        line-height: 1.5;
+        width: 1.5em;
+        height: 1.5em;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+      }
+
+      .style-96654 .team-label {
+        display: block;
+      }
+
+      .style-96654 .season-label {
+        display: block;
+      }
+
+      .style-96654 .play-button {
+        margin-bottom: 1em;
+      }
+
+      .style-96654 .album-select-form {
+        margin-bottom: .5em;
+      }
+
+      .style-96654 .school-level-label {
+        display: block;
+      }
+
+      .style-96654 .department-label {
+        display: block;
+      }
+
+      .style-96654 .grade-label {
+        display: block;
+      }
+
+      .style-96654 .greeting {
+        margin-bottom: 1em;
+      }
+
+      .style-96654 li.group {
+        flex-grow: 1;
+        margin: 0 0 0 3px;
+      }
+
+      .style-96654 li.group:first-child {
+        margin-top: 0;
+        margin-left: 0;
+      }
+
+      .style-96654 .schedule-time {
+        text-align: right;
+      }
+
+      .style-96654 .schedule-teamname {
+        font-size: 1.25em;
+        font-weight: bold;
+      }
+
+      .style-96654 .album .photo-list {
+        margin: 0;
+      }
+
+      .style-96654 .roster-entry {
+        margin: 1em 0 0 0;
+      }
+
+      .style-96654 .roster-entry:first-child {
+        margin-top: 0;
+      }
+
+      .style-96654 .course-title A {
+        display: block;
+      }
+
+      .style-96654 .schedule-rescheduled {
+        color: #F50202;
+      }
+
+      .style-96654 .schedule-cancelled {
+        color: #F50202;
+      }
+
+      .style-96654 .button-group:first-child {
+        display: block;
+      }
+
+      .style-96654 .newsarchivedatepicker .current-year {
+        text-align: center;
+      }
+
+      .style-96654 .newsarchivedatepicker .prev-year {
+        text-decoration: none;
+      }
+
+      .style-96654 .newsarchivelist .publish-month {
+        margin-bottom: .5em;
+      }
+
+      .style-96654 .newsarchivedatepicker .next-year {
+        text-align: right;
+        text-decoration: none;
+      }
+
+      .style-96654 .large-calendar-grid .day-holder {
+        line-height: 1.2;
+      }
+
+      .style-96654 .large-calendar-grid .date {
+        padding: .25em 0 0 .25em;
+      }
+
+      .style-96654 .game {
+        margin: 1em 0 0 0;
+      }
+
+      .style-96654 .game:first-child {
+        margin-top: 0;
+      }
+
+      .style-96654 .h4-style.calendar-event-title {
+        margin: 0 0 .25em 0;
+      }
+
+      .style-96654 .grad-year-short:before {
+        content: "\2019";
+      }
+
+      .style-96654 .game .ath-row.ath-row-one {
+        font-size: 1.25em;
+        font-weight: bold;
+      }
+
+      .style-96654 .at-alert-game {
+        margin-bottom: 1em;
+      }
+
+      .style-101677 time {
+        display: none;
+      }
+
+      .style-63952 {
+        margin-bottom: 2.5rem;
+      }
+
+      .style-63952 .category-description {
+        margin-bottom: 1em;
+      }
+
+      .style-63952 .link-image {
+        margin: 0 0 .5em 0;
+        display: block;
+      }
+
+      .style-63952 .long-description {
+        margin: 0;
+      }
+
+      .style-63952 .text img {
+        margin: 0 .5em .5em 0;
+      }
+
+      .style-63952 .lists img {
+        margin-bottom: .5em;
+      }
+
+      .style-63952 .question {
+        padding-left: 1.5em;
+        position: relative;
+      }
+
+      .style-63952 .question:before {
+        content: "Q.";
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      .style-63952 .answer {
+        padding-left: 1.5em;
+        position: relative;
+      }
+
+      .style-63952 .answer:before {
+        content: "A.";
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-weight: bold;
+      }
+
+      .style-63952 .caption {
+        margin: 0;
+      }
+
+      .style-63952 .letter-label {
+        display: block;
+      }
+
+      .style-63952 .start-date {
+        display: none;
+      }
+
+      .style-63952 .nick-name:before {
+        content: "\201C";
+      }
+
+      .style-63952 .nick-name:after {
+        content: "\201D";
+      }
+
+      .style-63952 .chart {
+        max-width: 350px !important;
+      }
+
+      .style-63952 .page-name {
+        margin-left: 2em !important;
+      }
+
+      .style-63952 .sitemap .open {
+        padding: 0 !important;
+        line-height: 1.5;
+        width: 1.5em;
+        height: 1.5em;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+      }
+
+      .style-63952 .sitemap .closed {
+        padding: 0 !important;
+        line-height: 1.5;
+        width: 1.5em;
+        height: 1.5em;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+      }
+
+      .style-63952 .team-label {
+        display: block;
+      }
+
+      .style-63952 .season-label {
+        display: block;
+      }
+
+      .style-63952 .play-button {
+        margin-bottom: 1em;
+      }
+
+      .style-63952 .album-select-form {
+        margin-bottom: .5em;
+      }
+
+      .style-63952 .school-level-label {
+        display: block;
+      }
+
+      .style-63952 .department-label {
+        display: block;
+      }
+
+      .style-63952 .grade-label {
+        display: block;
+      }
+
+      .style-63952 .greeting {
+        margin-bottom: 1em;
+      }
+
+      .style-63952 li.group {
+        margin: 1em 0 0 0;
+      }
+
+      .style-63952 li.group:first-child {
+        margin-top: 0;
+      }
+
+      .style-63952 .schedule-time {
+        text-align: right;
+      }
+
+      .style-63952 .schedule-teamname {
+        font-size: 1.25em;
+        font-weight: bold;
+      }
+
+      .style-63952 .album .photo-list {
+        margin: 0;
+      }
+
+      .style-63952 .roster-entry {
+        margin: 1em 0 0 0;
+      }
+
+      .style-63952 .roster-entry:first-child {
+        margin-top: 0;
+      }
+
+      .style-63952 .course-title A {
+        display: block;
+      }
+
+      .style-63952 .schedule-rescheduled {
+        color: #F50202;
+      }
+
+      .style-63952 .schedule-cancelled {
+        color: #F50202;
+      }
+
+      .style-63952 .date-icon {
+        min-width: 3em;
+        border-width: 2px;
+        border-style: solid;
+        border-color: #E3E3E3;
+      }
+
+      .style-63952 .month-name {
+        background-color: #E3E3E3;
+        line-height: 1.8;
+        text-transform: uppercase;
+      }
+
+      .style-63952 .day-number {
+        font-size: 1.5em;
+        line-height: 1.3;
+      }
+
+      .style-63952 .event-detail {
+        margin-left: 5em;
+      }
+
+      .style-63952 .filter-group {
+        margin: 1em 0 !important;
+      }
+
+      .style-63952 .filter-item {
+        margin: .5em 0;
+      }
+
+      .style-63952 .button-group {
+        margin-left: -5px;
+        display: none;
+      }
+
+      .style-63952 .button-group:first-child {
+        display: block;
+      }
+
+      .style-63952 .calendardatepicker li.today a {
+        background-color: #E3E3E3;
+      }
+
+      .style-63952 .calendardatepicker li.selected-day a {
+        background-color: #000000;
+        color: #FFFFFF;
+      }
+
+      .style-63952 .month-pager {
+        font-size: 1.25em;
+        font-weight: bold;
+      }
+
+      .style-63952 .prev-button {
+        text-decoration: none;
+        font-size: 1.25em;
+        line-height: 1;
+        margin-left: 0;
+      }
+
+      .style-63952 .next-button {
+        text-decoration: none;
+        font-size: 1.25em;
+        line-height: 1;
+      }
+
+      .style-63952 .month-select {
+        margin: 1em 0;
+      }
+
+      .style-63952 .today-button {
+        text-decoration: none;
+      }
+
+      .style-63952 .newsarchivedatepicker .current-year {
+        text-align: center;
+      }
+
+      .style-63952 .newsarchivedatepicker .prev-year {
+        text-decoration: none;
+      }
+
+      .style-63952 .newsarchivelist .publish-month {
+        margin-bottom: .5em;
+      }
+
+      .style-63952 .newsarchivedatepicker .next-year {
+        text-align: right;
+        text-decoration: none;
+      }
+
+      .style-63952 .large-calendar-grid .day-holder {
+        line-height: 1.2;
+      }
+
+      .style-63952 .large-calendar-grid .date {
+        padding: .25em;
+      }
+
+      .style-63952 .game {
+        margin: 1em 0 0 0;
+      }
+
+      .style-63952 .game:first-child {
+        margin-top: 0;
+      }
+
+      .style-63952 .h4-style.calendar-event-title {
+        margin: 0 0 .25em 0;
+      }
+
+      .style-63952 .grad-year-short:before {
+        content: "\2019";
+      }
+
+      .style-63952 .game .ath-row.ath-row-one {
+        font-size: 1.25em;
+        font-weight: bold;
+      }
+
+      .style-63952 .at-alert-game {
+        margin-bottom: 1em;
+      }
+
+      .style-63951 {
+        margin-bottom: 2.5rem;
+      }
+
+      .style-63951 .category-description {
+        margin-bottom: 1em;
+      }
+
+      .style-63951 .link-image {
+        margin: 0 0 .5em 0;
+        display: block;
+      }
+
+      .style-63951 .long-description {
+        margin: 0;
+      }
+
+      .style-63951 .text img {
+        margin: 0 .5em .5em 0;
+      }
+
+      .style-63951 .lists img {
+        margin-bottom: .5em;
+      }
+
+      .style-63951 .question {
+        padding-left: 1.5em;
+        position: relative;
+      }
+
+      .style-63951 .question:before {
+        content: "Q.";
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      .style-63951 .answer {
+        padding-left: 1.5em;
+        position: relative;
+      }
+
+      .style-63951 .answer:before {
+        content: "A.";
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-weight: bold;
+      }
+
+      .style-63951 .caption {
+        margin: 0;
+      }
+
+      .style-63951 .letter-label {
+        display: block;
+      }
+
+      .style-63951 .start-date {
+        display: none;
+      }
+
+      .style-63951 .nick-name:before {
+        content: "\201C";
+      }
+
+      .style-63951 .nick-name:after {
+        content: "\201D";
+      }
+
+      .style-63951 .chart {
+        max-width: 350px !important;
+      }
+
+      .style-63951 .page-name {
+        margin-left: 2em !important;
+      }
+
+      .style-63951 .sitemap .open {
+        padding: 0 !important;
+        line-height: 1.5;
+        width: 1.5em;
+        height: 1.5em;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+      }
+
+      .style-63951 .sitemap .closed {
+        padding: 0 !important;
+        line-height: 1.5;
+        width: 1.5em;
+        height: 1.5em;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+      }
+
+      .style-63951 .team-label {
+        display: block;
+      }
+
+      .style-63951 .season-label {
+        display: block;
+      }
+
+      .style-63951 .play-button {
+        margin-bottom: 1em;
+      }
+
+      .style-63951 .album-select-form {
+        margin-bottom: .5em;
+      }
+
+      .style-63951 .school-level-label {
+        display: block;
+      }
+
+      .style-63951 .department-label {
+        display: block;
+      }
+
+      .style-63951 .grade-label {
+        display: block;
+      }
+
+      .style-63951 .greeting {
+        margin-bottom: 1em;
+      }
+
+      .style-63951 li.group {
+        margin: 1em 0 0 0;
+      }
+
+      .style-63951 li.group:first-child {
+        margin-top: 0;
+      }
+
+      .style-63951 .schedule-time {
+        text-align: right;
+      }
+
+      .style-63951 .schedule-teamname {
+        font-size: 1.25em;
+        font-weight: bold;
+      }
+
+      .style-63951 .album .photo-list {
+        margin: 0;
+      }
+
+      .style-63951 .roster-entry {
+        margin: 1em 0 0 0;
+      }
+
+      .style-63951 .roster-entry:first-child {
+        margin-top: 0;
+      }
+
+      .style-63951 .course-title A {
+        display: block;
+      }
+
+      .style-63951 .schedule-rescheduled {
+        color: #F50202;
+      }
+
+      .style-63951 .schedule-cancelled {
+        color: #F50202;
+      }
+
+      .style-63951 .date-icon {
+        min-width: 3em;
+        border-width: 2px;
+        border-style: solid;
+        border-color: #E3E3E3;
+      }
+
+      .style-63951 .month-name {
+        background-color: #E3E3E3;
+        line-height: 1.8;
+        text-transform: uppercase;
+      }
+
+      .style-63951 .day-number {
+        font-size: 1.5em;
+        line-height: 1.3;
+      }
+
+      .style-63951 .event-detail {
+        margin-left: 5em;
+      }
+
+      .style-63951 .filter-group {
+        margin: 1em 0;
+      }
+
+      .style-63951 .filter-item {
+        margin: .5em 0;
+      }
+
+      .style-63951 .button-group {
+        margin-left: -5px;
+        display: none;
+      }
+
+      .style-63951 .button-group:first-child {
+        display: block;
+      }
+
+      .style-63951 .calendardatepicker li.today a {
+        background-color: #E3E3E3;
+      }
+
+      .style-63951 .calendardatepicker li.selected-day a {
+        background-color: #000000;
+        color: #FFFFFF;
+      }
+
+      .style-63951 .month-pager {
+        font-size: 1.25em;
+        font-weight: bold;
+      }
+
+      .style-63951 .prev-button {
+        text-decoration: none;
+        font-size: 1.25em;
+        line-height: 1;
+      }
+
+      .style-63951 .next-button {
+        text-decoration: none;
+        font-size: 1.25em;
+        line-height: 1;
+      }
+
+      .style-63951 .month-select {
+        margin: 1em 0;
+      }
+
+      .style-63951 .today-button {
+        text-decoration: none;
+      }
+
+      .style-63951 .newsarchivedatepicker .current-year {
+        text-align: center;
+      }
+
+      .style-63951 .newsarchivedatepicker .prev-year {
+        text-decoration: none;
+      }
+
+      .style-63951 .newsarchivelist .publish-month {
+        margin-bottom: .5em;
+      }
+
+      .style-63951 .newsarchivedatepicker .next-year {
+        text-align: right;
+        text-decoration: none;
+      }
+
+      .style-63951 .large-calendar-grid .day-holder {
+        line-height: 1.2;
+      }
+
+      .style-63951 .large-calendar-grid .date {
+        padding: .25em 0 0 .25em;
+      }
+
+      .style-63951 .game {
+        margin: 1em 0 0 0;
+      }
+
+      .style-63951 .game:first-child {
+        margin-top: 0;
+      }
+
+      .style-63951 .h4-style.calendar-event-title {
+        margin: 0 0 .25em 0;
+      }
+
+      .style-63951 .grad-year-short:before {
+        content: "\2019";
+      }
+
+      .style-63951 .game .ath-row.ath-row-one {
+        font-size: 1.25em;
+        font-weight: bold;
+      }
+
+      .style-63951 .at-alert-game {
+        margin-bottom: 1em;
+      }
+
+      .style-94801 {
+        margin-bottom: 2.1875rem;
+        color: var(--body-color);
+        text-align: center;
+        margin: auto;
+      }
+
+      .style-94801 .long-description {
+        margin-bottom: .625em;
+        display: none;
+      }
+
+      .style-94801 A.links-urllink {
+        color: #000;
+        font-size: 1.22rem;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .style-94801 li.group {
+        display: inline-block;
+        margin-left: 15px;
+      }
+
+      .style-94801 li.group:first-child {
+        margin-left: 0;
+      }
+
+      .style-94807 {
+        max-width: 50vw;
+        margin: 5em auto 0 auto;
+        text-align: center;
+      }
+
+      .style-94807 .caption {
+        display: none;
+      }
+
+      .style-94807 li.group {
+        display: inline-block;
+        flex: 0 1 33%;
+      }
+
+      .style-91710 .carousel.flexslider {
+        margin: 0;
+      }
+
+      .style-91711 {
+        text-align: center;
+      }
+
+      .style-91711 .carousel.flexslider {
+        margin: 0 25px;
+        max-width: 960px;
+      }
+
+      .style-96655 {
+        padding: 50px 0;
+      }
+
+      .style-63948 {
+        background-color: #FFFFFF;
+      }
+
+      .style-63948 .emergencybulletin .addinfo.button {
+        margin-top: 1.5rem;
+      }
+
+      .style-63949 .mm-button-container {
+        background-color: #333333;
+        color: #FFFFFF;
+      }
+
+      .style-63949 .mm-sub-ind {
+        background: none;
+        border-left: 8px solid;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-right: 0;
+        min-width: 0;
+        min-height: 0;
+        display: block;
+        width: 0;
+        height: 0;
+        line-height: 0;
+      }
+
+      .style-63949 .mm-back-sub-ind {
+        background: none;
+        border-right: 8px solid;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-left: 0;
+        min-width: 0;
+        min-height: 0;
+        display: inline-block;
+        float: none;
+        width: 0;
+        height: 0;
+        line-height: 0;
+      }
+
+      .style-63949 .mm-button .icon {
+        background: none;
+        background-color: #ffffff;
+        border-color: #333;
+        border-width: 10px 0;
+        border-style: solid;
+        height: 5px;
+        position: relative;
+        margin: 10px 7px 0 7px;
+        cursor: pointer;
+      }
+
+      .style-63949 .mm-button .icon:before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 5px;
+        top: -10px;
+        background-color: #ffffff;
+        -webkit-transition: all .2s ease;
+        -moz-transition: all .4s ease;
+        -o-transition: all .4s ease;
+        transition: all .4s ease;
+      }
+
+      .style-63949 .mm-button .icon:after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 5px;
+        bottom: -10px;
+        background-color: #ffffff;
+        -webkit-transition: all .2s ease;
+        -moz-transition: all .4s ease;
+        -o-transition: all .4s ease;
+        transition: all .4s ease;
+      }
+
+      /* ============= CUSTOM CSS ============== */
+      /*Generic HTML tag fixes*/
+      a {
+        cursor: pointer;
+        outline: 0;
+      }
+
+      /*making links show a pointer on hover and removing outline*/
+      figure {
+        margin: 0;
+      }
+
+      select {
+        max-width: 100%;
+      }
+
+      li {
+        line-height: inherit;
+      }
+
+      blockquote {
+        border-left: 0;
+      }
+
+      /*removing Bootstrap’s left border on 
+													<blockquote>*/
+      /*Framework Fixes*/
+      .row-fluid [class*="span"] {
+        min-height: 1px;
+      }
+
+      /*reducing min height of empty columns so they don't take up so much height*/
+      .layout {
+        position: relative;
+        z-index: 0;
+      }
+
+      /* keeps layout contents from appearing over important lightboxes and banners */
+      .carousel {
+        position: relative;
+        z-index: 0;
+      }
+
+      /* keeps carousel descendants from stacking independent of the carousel itself */
+      .mobilemenu {
+        position: relative;
+        z-index: 100;
+      }
+
+      /* keeps the mobile menu from appearing over the emergency bulletin */
+      .fixed-bulletin {
+        position: relative;
+        z-index: 500 !important;
+      }
+
+      /* keeps the fixed bulletin banner from appearing over the bulletin lightbox */
+      html.styler .externalvideo {
+        padding: 10px;
+      }
+
+      /*Adding some clickable space around an embed item in Edit Style so you can click on it and apply a style*/
+      .bulletin-banner .fixed-region {
+        position: static;
+      }
+
+      /*removing fixed region when emergency bulletin banner is on, so header isn't showing 1/2 way down the screen as you scroll down the page*/
+      .bulletin-banner .fixed-region+.region {
+        margin-top: 0 !important;
+      }
+
+      /*removing the margin top on the region below the fixed header when the emergency bulletin banner is on*/
+      /* .style-95656 .emergencybulletin .close { text-decoration: none;font-weight: bold;display: inline-block;padding: 1em;line-height: 1;background-color: #ffffff; }
+  .style-95656 .emergencybulletin .alert-icon { margin-left: 1rem; }
+  .style-95656 .emergencybulletin .message { padding: 0 1rem;text-align: left;background-image: url('//bbk12e1-cdn.myschoolcdn.com/ftpimages/605/site/1763/images/gift-white.svg'); }
+  .style-95656 .emergencybulletin .addinfo.button { margin-left: 1rem; }
+  .style-95656 .emergencybulletinbanner .close { text-decoration: none;font-weight: bold;display: inline-block;padding: 1em;line-height: 1;background-color: #ffffff; } */
+      /* Popup Animation */
+      @-webkit-keyframes slbEnter {
+        from {
+          opacity: 0;
+          -webkit-transform: translate3d(0, -1em, 0);
+        }
+
+        to {
+          opacity: 1;
+          -webkit-transform: translate3d(0, 0, 0);
+        }
+      }
+
+      @-moz-keyframes slbEnter {
+        from {
+          opacity: 0;
+          -moz-transform: translate3d(0, -1em, 0);
+        }
+
+        to {
+          opacity: 1;
+          -moz-transform: translate3d(0, 0, 0);
+        }
+      }
+
+      @keyframes slbEnter {
+        from {
+          opacity: 0;
+          -webkit-transform: translate3d(0, -1em, 0);
+          -moz-transform: translate3d(0, -1em, 0);
+          -ms-transform: translate3d(0, -1em, 0);
+          -o-transform: translate3d(0, -1em, 0);
+          transform: translate3d(0, -1em, 0);
+        }
+
+        to {
+          opacity: 1;
+          -webkit-transform: translate3d(0, 0, 0);
+          -moz-transform: translate3d(0, 0, 0);
+          -ms-transform: translate3d(0, 0, 0);
+          -o-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+      }
+
+      #simplemodal-overlay {
+        opacity: 0.8 !important
+      }
+
+      /* Emergency Bulleting Popup */
+      #simplemodal-container {
+        height: 100% !important;
+        overflow: visible !important;
+        transform: none !important;
+        height: 100% !important;
+        padding: unset !important;
+        width: 100% !important;
+        margin: unset !important;
+        left: 0 !important;
+      }
+
+      .simplemodal-wrap {
+        height: 100% !important;
+        width: 100% !important;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        top: 0 !important;
+      }
+
+      /* Simple Modal Close */
+      /* #emergency-bulletin-lightbox .close, #pageengine-modal a.modalCloseImg  {
+      -webkit-animation: slbEnter 0.3s;
+      -moz-animation: slbEnter 0.3s;
+      animation: slbEnter 0.3s;
+      font-size: 30px;
+      width: 2em;
+      height: 2em;
+      position: absolute;
+      right: -18px;
+      text-align: center;
+      top: -70px;
+      text-decoration: none;
+      font-family: arial;
+      background: url(//bbk12e1-cdn.myschoolcdn.com/ftpimages/286/site/1449/images/new-close.svg);
+      background-size: 30px;
+      background-repeat: no-repeat;
+      opacity: 0.7;
+      background-position: center;
+      text-indent: -9999px;
+      -webkit-transition: opacity 0.3s ease;
+      -moz-transition: opacity 0.3s ease;
+      -ms-transition: opacity 0.3s ease;
+      transition: opacity 0.3s ease;
+  } */
+      #emergency-bulletin-lightbox .close,
+      #pageengine-modal a.modalCloseImg {
+        position: absolute;
+        right: -18px;
+        text-align: center;
+        top: -70px;
+        width: 65px;
+        height: 65px;
+        border-radius: 10px;
+        display: block;
+        z-index: 200;
+        text-indent: -9999px;
+        background: none;
+      }
+
+      #emergency-bulletin-lightbox .close:before,
+      #emergency-bulletin-lightbox .close:after,
+      #pageengine-modal a.modalCloseImg:before,
+      #pageengine-modal a.modalCloseImg:after {
+        content: '';
+        width: 55%;
+        height: 5px;
+        background: #fff;
+        position: absolute;
+        top: 48%;
+        left: 22%;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        -ms-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+      }
+
+      #emergency-bulletin-lightbox .close:after,
+      #pageengine-modal a.modalCloseImg:after {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        -ms-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+      }
+
+      #emergency-bulletin-lightbox .close:hover:before,
+      #emergency-bulletin-lightbox .close:hover:after,
+      #pageengine-modal a.modalCloseImg:hover:before,
+      #pageengine-modal a.modalCloseImg:hover:after {
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+
+      /* #emergency-bulletin-lightbox .close:hover, #pageengine-modal a.modalCloseImg:hover  {
+      opacity: 1;
+  } */
+      #emergency-bulletin-lightbox {
+        position: relative;
+        margin: 0 auto;
+        -webkit-animation: slbEnter 0.3s;
+        animation: slbEnter 0.3s;
+        -webkit-box-shadow: 0 0.2em 1em rgb(0 0 0 / 40%);
+        box-shadow: 0 0.2em 1em rgb(0 0 0 / 40%);
+        overflow: visible !important;
+        width: 50vw !important;
+        top: unset !important;
+        bottom: unset !important;
+        left: unset !important;
+        right: unset !important;
+        height: unset !important;
+        padding: 2em !important;
+      }
+
+      /* Video Popup Adjustments */
+      #pageengine-modal {
+        -webkit-animation: slbEnter 0.3s;
+        animation: slbEnter 0.3s;
+        -webkit-box-shadow: 0 0.2em 1em rgb(0 0 0 / 40%);
+        box-shadow: 0 0.2em 1em rgb(0 0 0 / 40%);
+      }
+
+      #pageengine-modal .simplemodal-wrap {
+        display: unset;
+        justify-content: unset;
+        align-items: unset;
+        top: unset;
+      }
+
+      /* Emergency Bulletin */
+      #emergency-bulletin-banner {
+        background-color: #f1f1f1;
+        position: relative;
+        padding: 1em 2em 5em 2em;
+      }
+
+      .emergencybulletinbanner .button-wrap {
+        float: none;
+        margin: unset;
+      }
+
+      .emergencybulletinbanner .addinfo {
+        display: inline-block;
+        margin-right: unset !important;
+        position: absolute;
+        bottom: 1em;
+      }
+
+      /* .emergencybulletinbanner .close {
+      float: none !important;
+      font-size: 30px;
+      width: 2em;
+      height: 2em;
+      position: absolute;
+      right: 0.25em;
+      color: rgba(255, 255, 255, 0.7);
+      text-align: center;
+      top: -0.25em;
+      text-decoration: none;
+      font-family: arial;
+      background: url(//bbk12e1-cdn.myschoolcdn.com/ftpimages/286/site/1449/images/close-blk.svg);
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+      text-indent: -9999px;
+  } */
+      .emergencybulletinbanner .close {
+        position: absolute;
+        float: none !important;
+        right: 0.25em;
+        text-align: center;
+        top: 0;
+        width: 45px;
+        height: 45px;
+        border-radius: 10px;
+        display: block;
+        z-index: 200;
+        text-indent: -9999px;
+      }
+
+      .emergencybulletinbanner .close:before,
+      .emergencybulletinbanner .close:after {
+        content: '';
+        width: 55%;
+        height: 4px;
+        background: #191919;
+        position: absolute;
+        top: 48%;
+        left: 22%;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        -ms-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+      }
+
+      .emergencybulletinbanner .close:after {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        -ms-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+      }
+
+      .emergencybulletinbanner .close:hover:before,
+      .emergencybulletinbanner .close:hover:after {
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+
+      /*Carousel Fixes*/
+      .content .flexslider {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        -o-box-shadow: none;
+        box-shadow: none;
+        border: 0;
+        -webkit-border-radius: 0;
+        -o-border-radius: 0;
+        border-radius: 0;
+        background: none;
+      }
+
+      /*removing carousel default styles*/
+      .carousel.gallery-style.flexslider {
+        height: auto !important
+      }
+
+      /* --- fixing height issue on sidebar gallery --- */
+      .carousel.gallery-style.flexslider .flex-viewport {
+        border: 0 !important
+      }
+
+      /* --- removing default border around image in Sidebar Galleries --- */
+      .carousel .slides,
+      .carousel .flex-direction-nav {
+        list-style: none;
+      }
+
+      /* --- removing bullets from showing when carousel loads --- */
+      .background-carousel .details {
+        opacity: 0
+      }
+
+      /*hiding carousel details until they transition in, so you don’t see them on page load*/
+      .carousel figure {
+        min-height: 0 !important;
+      }
+
+      /* --- min-height being set by default in the carousel code - causes extra space below banner photos on mobile --- */
+      .carousel .flex-direction-nav .flex-disabled {
+        opacity: 0 !important;
+      }
+
+      /*not showing the back/next arrow when the carousel has nothing to rotate and is disabled*/
+      .carousel.flexslider.gallery-style.arrows .flex-direction-nav li {
+        margin: 0;
+      }
+
+      /*removing news li margins in gallery bar in single image carousel w/ sidebar gallery turned on*/
+      .background-carousel .detail-container .details {
+        position: absolute;
+        z-index: -1;
+      }
+
+      /*setting carousel details to absolute to prevent horizontal scroll bar caused by other details stacking up to the right of the current details container*/
+      .background-carousel .detail-container .details.current-details {
+        position: relative;
+        z-index: 1;
+      }
+
+      /*setting the current details container back to position: relative - it’s default style*/
+      .background-carousel .crl-details::after {
+        content: " ";
+        display: table;
+        clear: both;
+      }
+
+      /*fixing collapsed details container, that causes some content within the details container to extend out of the details box.*/
+      .background-carousel .bg-images {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+
+      /*fixing display issues with background carousel when hovering over other items on the page*/
+      .background-carousel .detail-container .details.current-details {
+        display: block;
+      }
+
+      /*Showing the background carousel details container for the current slide*/
+      .flex-direction-nav .flex-disabled {
+        opacity: 0 !important;
+        cursor: none;
+        pointer-events: none;
+      }
+
+      /*turn off arrows if no more content in a gallery*/
+      /*Menu & Navigation Widget Fixes*/
+      .menu a,
+      .nav-menu a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /*setting menu links to inherit color from item, and removing underline*/
+      .mm-button,
+      .mm-button.dl-active,
+      .mm-button:hover {
+        background-color: transparent;
+      }
+
+      /*removing background color from mobile menu button*/
+      .menu-type-accordion .sub2:last-child::after,
+      .menu-type-accordion .sub3:last-child::after {
+        padding-bottom: 0px
+      }
+
+      /* --- removing extra space at bottom of accordion menu subnav --- */
+      .menu-type-vertical.menu-action-hover.menu-animate-true ul>li:hover>.submenu,
+      .menu-type-vertical.menu-action-hover.menu-animate-true ul li>li:hover>.submenu {
+        left: 100%
+      }
+
+      /*Fix iOS not setting flyout menu to right of the menu (showing below)*/
+      .menu-direction-left .l1-item:hover>.submenu {
+        left: 100% !important;
+      }
+
+      /*fix left position on sub menu when there is a width set on the submenu*/
+      .menu-type-vertical.menu-direction-left .arrow,
+      .menu-type-vertical.menu-direction-left .subnav .arrow {
+        border-left-color: inherit;
+      }
+
+      /*Set the Vertical Flyout Menu Subnav indicator to the text color*/
+      .menu-type-vertical.menu-direction-right .arrow,
+      .menu-type-vertical.menu-direction-right .submenu .arrow {
+        border-right-color: inherit;
+      }
+
+      /*Set the Vertical Flyout Menu Subnav indicator to the text color*/
+      .menu-type-horizontal ul .submenu .submenu {
+        top: 0;
+      }
+
+      /*Aligning level 3 menu with level 2 item in a dropdown menu*/
+      .menu-type-mega {
+        position: relative;
+        z-index: 90;
+      }
+
+      /*fixing mega menu z-index so other subnavs can show over it on hover*/
+      .menu-type-mega ul .panel a:not(.button) {
+        display: inline;
+      }
+
+      /*resetting links inside the mega menu panel to inline*/
+      .menu-type-mega ul .panel .menu-item a {
+        display: block;
+      }
+
+      /*setting menu links back to block*/
+      .mini-sitemap-open,
+      .mini-sitemap-close {
+        display: inline-block;
+      }
+
+      /*set sitemap open/close buttons to inline-block so they behave like buttons*/
+      .mini-sitemap ul.collapsed {
+        height: auto;
+      }
+
+      /*allowing mini site map nav to collapse*/
+      .mini-sitemap .width-7 {
+        width: 13%;
+        margin-right: 1%;
+      }
+
+      /*setting a width for 7 menu items in the mini sitemap*/
+      .mini-sitemap .width-8 {
+        width: 11.5%;
+        margin-right: 1%;
+      }
+
+      /*setting a width for 8 menu items in the mini sitemap*/
+      .mini-sitemap .width-9 {
+        width: 10.5%;
+        margin-right: .5%;
+      }
+
+      /*setting a width for 9 menu items in the mini sitemap*/
+      .mini-sitemap .width-10 {
+        width: 9.5%;
+        margin-right: .4%;
+      }
+
+      /*setting a width for 10 menu items in the mini sitemap*/
+      /*Block Style or Content Fixes*/
+      .brief-description ul,
+      .long-description ul,
+      .caption ul,
+      .lists ul .long-description ul,
+      .lists ul .brief-description ul {
+        list-style: disc outside;
+        padding: 0;
+        margin: 0 0 10px 25px;
+      }
+
+      /* --- resetting list style within a brief or long description, caption --- */
+      .downloads .subcategory-group>ul {
+        margin: 0;
+      }
+
+      /* --- removing margin from UL around download 
+  items --- */
+      .email {
+        -ms-word-break: break-all;
+        word-break: break-all;
+      }
+
+      /*breaking long emails so they stay within the container*/
+      .fund .chart.top {
+        max-width: 100%;
+      }
+
+      /*correcting width of annual fund chart when the alignment is set to top*/
+      .facultystaffdirectory .table {
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      /*make the table that wraps the faculty staff directly content go the full width, so some content doesn’t wrap unnecessarily*/
+      .no-mobile .telephone,
+      .no-mobile .telephone:hover {
+        text-decoration: none;
+        color: inherit;
+        font-weight: inherit;
+        pointer-events: none;
+      }
+
+      /*don't show telephone links on non-mobile devices*/
+      .text .photos.left {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        max-width: 100%;
+      }
+
+      /*adding space between photos and text when photos are set to left, adding fix for Firefox allowing photos to break out of parent container*/
+      .text .photos.right {
+        margin-left: 10px;
+        margin-bottom: 10px;
+        max-width: 100%;
+      }
+
+      /*adding space between photos and text when photos are set to right, adding fix for Firefox allowing photos to break out of parent container*/
+      .fixed-bulletin {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      /*Adding box sizing to emergency bulletin banner, because padding causes a scroll bar*/
+      a.custom-link-photo {
+        text-decoration: none;
+      }
+
+      /*No underlines on link images*/
+      .athleticrecentgames .container-fluid {
+        padding: 0;
+      }
+
+      /*removing left/right padding around content container on athletic schedule from Bootstrap styles*/
+      .facultystaffdirectory .faculty-staff-list ul li img {
+        height: auto !important;
+      }
+
+      /*allow directory photo to go to natural proportions*/
+      .calendardatepicker .month-pager::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /*adding clearfix to calendar buttons above date picker*/
+      .news .carousel ul li,
+      .news ul li.details {
+        margin: 0;
+      }
+
+      /*remove bottom margin from items in news carousels*/
+      .newsdetail,
+      .eventdetail,
+      .announcementdetail,
+      .listdetail {
+        line-height: inherit;
+      }
+
+      /*removes line-height being applied to news detail content*/
+      .downloads ul li {
+        padding: 0;
+      }
+
+      /*remove 5px of padding at the bottom of downloads item, so styling can be consistent across content types*/
+      .newsarchivedatepicker .year-container .row-fluid .span6 {
+        display: none;
+      }
+
+      /*News Archive Date Picker - hiding empty divs, so I can set arrows & year to span across container*/
+      .newsarchivedatepicker .year-container .row-fluid .span4 {
+        width: 33%;
+        margin: 0;
+        float: left;
+      }
+
+      /*News Archive Date Picker - setting arrows & year to span across container*/
+      .group::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /*putting clearfix on Group items so that floated content inside group, such as images, don’t horizontally “stack”*/
+      .play-button img {
+        display: none;
+      }
+
+      /*Hiding film image in media widget*/
+      ul.album-list {
+        margin: 0;
+      }
+
+      /* --- removing margin from UL around media gallery items --- */
+      .affinity .h4-style span.first-name::after,
+      .affinity .h4-style span.last-name::after {
+        content: " ";
+        font-size: 0;
+      }
+
+      /*Helping affinity names to wrap*/
+      .affinity ul li img:not(.left)~div.details,
+      .affinity ul li img:not(.right)~div.details {
+        display: block;
+      }
+
+      /*setting affinity details to display: block, when the image is set to above, so the details will go the full width of the block*/
+      .affinity ul li img.left~div.details,
+      .affinity ul li img.right~div.details {
+        display: table-cell;
+      }
+
+      /*setting the details to table-cell when the image is on the left or right*/
+      .news ul li img.left,
+      .news ul li img.right {
+        max-width: 50%;
+      }
+
+      /*keeping news thumbnails no larger than 50% of the width of the container to give the text more room on smaller widths/viewports*/
+      .album .photo-list {
+        margin: 0;
+      }
+
+      /*removing the 10px bottom margin from the ul around the photos*/
+      .game {
+        clear: both;
+      }
+
+      /*adding clear, so the Print button on the schedule shows above the 1st game*/
+      .athleticrecentgames .game .ath-game-info {
+        width: 100%;
+      }
+
+      /*Recent Games - make game info full width*/
+      .athleticrecentgames .game .ath-game-info+.span8 {
+        display: none;
+      }
+
+      /*Recent Games - remove empty div taking up space next to game info*/
+      .athleticteamstatistics table {
+        width: 100%;
+      }
+
+      /*Athletic Statistics - setting to full width*/
+      .athleticteampicker .teampicker-control,
+      .departmentpicker .deptpicker-control {
+        margin: 0;
+      }
+
+      /*removing the 10px bottom margin from the bottom of the team picker so we can better control with styling*/
+      .team-list {
+        width: 100%;
+      }
+
+      /*Setting team list to full width of the column*/
+      .search-text::-webkit-input-placeholder {
+        color: inherit;
+      }
+
+      /*setting search input placeholder to inherit the color that is set*/
+      .search-text::-moz-placeholder {
+        color: inherit;
+      }
+
+      /*setting search input placeholder to inherit the color that is set*/
+      .search-text:-ms-input-placeholder {
+        color: inherit;
+      }
+
+      /*setting search input placeholder to inherit the color that is set*/
+      .search-text::placeholder {
+        color: inherit;
+      }
+
+      /*setting search input placeholder to inherit the color that is set*/
+      .announcement .archive {
+        display: none;
+      }
+
+      /*Hiding the archive button in announcements, since there is no announcement archive*/
+      .calendardatepicker .day a,
+      .calendardatepicker .day-header span {
+        height: auto;
+      }
+
+      /*Allowing calendar date picker cells to render at the height specified by the text and styling*/
+      /* =============== STYLES ================ */
+      /*Video play button - customizing color*/
+      .aws-player.video-js:hover .vjs-big-play-button,
+      .aws-player.video-js .vjs-big-play-button:focus,
+      .aws-player.video-js .vjs-big-play-button:active,
+      .aws-player.video-js .vjs-play-progress,
+      .aws-player.video-js .vjs-volume-level {
+        background-color: #000;
+      }
+
+      .style-85566 .content-wrap ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+      }
+
+      .style-85566 .content-wrap li.group {
+        position: relative;
+      }
+
+      .style-85566 .bio {
+        display: none !important;
+        position: absolute;
+        right: -25vw;
+        width: 25vw;
+        top: 50%;
+        font-size: 14px;
+        opacity: 0;
+        -webkit-transition: opacity 0.3s ease;
+        -moz-transition: opacity 0.3s ease;
+        -o-transition: opacity 0.3s ease;
+        -ms-transition: opacity 0.3s ease;
+        transition: opacity 0.3s ease;
+        background-color: #fff;
+        box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+        padding: 1em 1.5em;
+        z-index: 1;
+      }
+
+      .style-85566 .biobutton:hover+.bio {
+        opacity: 1;
+        display: block !important;
+      }
+
+      /*Single Image Carousel*/
+      .style-91711 .flex-viewport {
+        overflow: visible !important;
+      }
+
+      .style-91711 .flex-viewport .slides li img {
+        opacity: 0.3;
+      }
+
+      .style-91711 .flex-viewport .slides li.flex-active-slide img {
+        opacity: 1;
+      }
+
+      /* Simple Modal Gallery */
+      .style-94807 .content-wrap ul {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .style-96108 .content-wrap ul {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      /*Photo Block Lightbox*/
+      .slbCaption {
+        font-size: 1rem !important;
+      }
+
+      /* Tabs*/
+      .style-96654 .content-wrap ul {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        display: -ms-flexbox;
+        display: -webkit-box;
+        display: flex;
+      }
+
+      /* unset brief-description list */
+      .style-96654 ul .brief-description ul {
+        list-style: disc outside;
+        margin: 0 0 .5em 1em;
+        padding: unset;
+        display: inline-block;
+      }
+
+      .style-96654 .content-wrap ul>li {
+        text-align: center;
+        background-color: #eee;
+        border-radius: 3px 3px 0 0;
+        color: #000;
+      }
+
+      .style-96654 ul .brief-description ul>li {
+        margin: unset;
+        margin-right: unset;
+        padding: unset;
+        text-align: unset;
+        background-color: unset;
+        border-radius: unset;
+        color: unset
+      }
+
+      /* When active state */
+      .style-96654 .content-wrap ul li:first-child .brief-description,
+      .style-96654 .active {
+        display: block;
+      }
+
+      .style-96654 .content-wrap ul li.active {
+        color: var(--color-2) !important;
+      }
+
+      .style-96654 .content-wrap ul li.active .h4-style>a {
+        color: var(--color-2) !important;
+      }
+
+      .slbWrapOuter .close {
+        position: absolute;
+        float: none !important;
+        right: 0;
+        text-align: center;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 0;
+        display: block;
+        z-index: 200;
+        text-indent: -9999px;
+      }
+
+      .slbWrapOuter .close:before,
+      .slbWrapOuter .close:after {
+        content: '';
+        width: 100%;
+        height: 3px;
+        background: #ffffff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        -ms-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+      }
+
+      .slbWrapOuter .close:after {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        -ms-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+      }
+
+      .slbWrapOuter .close:hover:before,
+      .slbWrapOuter .close:hover:after {
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+
+      .slbWrapOuter .close:hover {
+        opacity: 1;
+      }
+
+      .autolightbox .slbContentOuter {
+        padding: 4em 0;
+      }
+
+      .autolightbox .slbContent {
+        -webkit-animation: slbEnter 0.3s;
+        -moz-animation: slbEnter 0.3s;
+        animation: slbEnter 0.3s;
+        background-color: #fff;
+        box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.4);
+        width: clamp(40vw, 400px, 95vw);
+        padding: 1em;
+      }
+
+      /*Hide H2*/
+      .autolightbox .h2-style {
+        display: none
+      }
+
+      /* Display in Styler, Not Page*/
+      .style-101677 {
+        display: none;
+      }
+
+      .styler .style-101677 {
+        display: block;
+      }
+
+      /* Display in Lightbox */
+      .slbWrapOuter .style-101677 {
+        display: block;
+      }
+
+      /* Stop Showing Link */
+      .stop-showing {
+        display: block;
+      }
+
+      /* ============== MEDIA QUERIES ================ */
+      /* --- Full Desktop --- */
+      @media(min-width:1200px) {}
+
+      /* --- END full desktop --- */
+      /* --- Small Desktop --- */
+      @media(max-width:1199px) and (min-width:980px) {
+
+        .span9 .facultystaffdirectory .table-cell,
+        .span8 .facultystaffdirectory .table-cell,
+        .span7 .facultystaffdirectory .table-cell,
+        .span6 .facultystaffdirectory .table-cell,
+        .span5 .facultystaffdirectory .table-cell,
+        .span4 .facultystaffdirectory .table-cell,
+        .span9 .departmentpicker .table-cell,
+        .span8 .departmentpicker .table-cell,
+        .span7 .departmentpicker .table-cell,
+        .span6 .departmentpicker .table-cell,
+        .span5 .departmentpicker .table-cell,
+        .span4 .departmentpicker .table-cell,
+        .span9 .athleticteampicker .table-cell,
+        .span8 .athleticteampicker .table-cell,
+        .span7 .athleticteampicker .table-cell,
+        .span6 .athleticteampicker .table-cell,
+        .span5 .athleticteampicker .table-cell,
+        .span4 .athleticteampicker .table-cell {
+          display: inline-block;
+        }
+
+        /* --- allowing dropdowns to wrap --- */
+      }
+
+      /* --- END Small Desktop --- */
+      /* --- Tablet --- */
+      @media(max-width:979px) and (min-width:768px) {
+
+        .facultystaffdirectory .table-cell,
+        .departmentpicker .table-cell,
+        .athleticteampicker .table-cell {
+          display: inline-block;
+        }
+
+        /* --- allowing dropdowns to wrap on tablet --- */
+        html:not(.styler) .directions-link {
+          padding-left: 3% !important;
+          padding-right: 3% !important;
+          box-sizing: border-box;
+        }
+
+        /*adding some padding to the athletic schedule directions button, due to onMessage removing all left/right padding*/
+        .calendargrid .large-calendar-grid .day-holder .day {
+          min-height: 1em;
+        }
+
+        /*resetting minimum height of calendar grid days, so that there is not a gap below the background color*/
+      }
+
+      /* --- END Tablet --- */
+      /* --- Mobile --- */
+      @media(max-width:767px) {
+
+        .mini-sitemap .width-7,
+        .mini-sitemap .width-8,
+        .mini-sitemap .width-9,
+        .mini-sitemap .width-10 {
+          width: 100%;
+          margin-right: 0;
+        }
+
+        /*stacking mini sitemap items*/
+        .facultystaffdirectory .table,
+        .facultystaffdirectory .table-row {
+          display: block;
+        }
+
+        /*removing display: table & table-row*/
+        .facultystaffdirectory .table-cell,
+        .departmentpicker .table-cell {
+          display: inline-block;
+          max-width: 100%;
+        }
+
+        /* --- allowing dropdowns to wrap on mobile & not break out of box --- */
+        .row-fluid [class*="offset"]:first-child {
+          margin-left: 0
+        }
+
+        /*remove left margin from first-child on mobile*/
+        .team-list .column {
+          width: 100%;
+          display: block;
+        }
+
+        /*stack team list columns on tablet & mobile*/
+        html:not(.styler) .directions-link {
+          padding-left: 3% !important;
+          padding-right: 3% !important;
+          box-sizing: border-box;
+        }
+
+        /*adding some padding to the athletic schedule directions button, due to onMessage removing all left/right padding*/
+        .calendargrid .large-calendar-grid .day-holder .day {
+          min-height: 1em;
+        }
+
+        /*resetting minimum height of calendar grid days, so that there is not a gap below the background color*/
+        /*INT: Reverse mobile stacking order -left column first - setting flex so the order of columns can be reversed*/
+        .style-63953 {
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          -webkit-flex-direction: column-reverse;
+          -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+        }
+
+        .style-96654 .content-wrap ul {
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+        }
+
+        .style-96654 .content-wrap ul>li {
+          -webkit-box-flex: 1;
+          -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+        }
+
+        .style-96654 .content-wrap ul .brief-description {
+          position: relative;
+          padding: 10px 15px 20px 15px;
+          margin-top: 0;
+        }
+
+        .style-96654 {
+          height: auto !important;
+        }
+
+        .simplemodal-wrap .simplemodal-data {
+          overflow: unset !important;
+        }
+
+        /* Emergency Lightbox */
+        #emergency-bulletin-lightbox {
+          width: 70vw !important;
+          top: 20% !important;
+        }
+
+        .emergencybulletin-lightbox {
+          min-width: unset !important;
+        }
+
+        .simplemodal-wrap {
+          display: block !important;
+          justify-content: unset !important;
+          align-items: unset !important;
+        }
+      }
+
+      /* ---END Mobile --- */
+    </style>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/headJs/1.0.3.cd/head.min.js"></script>
+    <style type="text/css" id="operaUserStyle"></style>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/jquery/2.2.4/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/handlebars/3.0.3/handlebars.min.js"></script>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/underscore/1.8.3/underscore-min.js"></script>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/backbone/1.1.2/backbone-min.js"></script>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/backbone-validation/0.11.3/backbone-validation-min.js"></script>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/jquery-flexslider/2.10/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/video/7.4.3/video.min.js"></script>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/video/share/1.5/share.video.min.js"></script>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/jquery-simplemodal/1.4.5/jquery.simplemodal.1.4.5.min.js"></script>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/jquery-background-carousel/1.2/jquery.background.carousel.js"></script>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/jquery-jplayer/2.4.1/jquery.jplayer.js"></script>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/jqueryui/1.9.2/jquery-ui-1.9.2.min.js"></script>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/jquery-waitforimages/1.5/jquery.waitforimages.js"></script>
+    <script type="text/javascript" src="//src-e1.myschoolapp.com/1.52.23009.9/minify/page-main.js"></script>
+    <!-- SimpleLightbox JS-->
+    <script type="text/javascript" src="//whthemes.myschoolapp.com/ftpimages/492/download/download_6227162.js"></script>
+    <!-- SimpleLightbox CSS-->
+    <link rel="stylesheet" type="text/css" href="//whthemes.myschoolapp.com/ftpimages/492/download/download_6227163.css">
+    <script src="js/autolistlightbox.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        createAutoListLightbox(101677, 'autolightbox', 1000);
+      });
+    </script>
+  </head>
+  <body class="body ">
+    <div class="layout" id="layout_9881">
+      <div class="region layout-region in-view top-of-page bottom-of-page has-been-viewed" id="layout_region_0">
+        <div class="container">
+          <div class="layout-row row in-view top-of-page bottom-of-page has-been-viewed">
+            <div class="last-col first-col layout-col span24 col">
+              <div class="layout-block clearfix in-view top-of-page bottom-of-page has-been-viewed" data-cid="390" id="content_98968">
+                <div class="layout_block_98968 region page-region in-view top-of-page bottom-of-page has-been-viewed" id="page_region_174165"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="region layout-region in-view bottom-of-page has-been-viewed" id="layout_region_1">
+        <div class="full-width">
+          <div class="layout-row row-fluid">
+            <div class="last-col first-col layout-col span24 col">
+              <div class="layout-block clearfix in-view bottom-of-page has-been-viewed" data-cid="390" id="content_156991">
+                <div class="layout_block_156991 region page-region in-view bottom-of-page has-been-viewed" id="page_region_174166">
+                  <div class="page-row row in-view bottom-of-page has-been-viewed">
+                    <div class="last-col first-col page-col span24 col">
+                      <div class="page-block style-101677 clearfix in-view top-of-page" data-cid="24" id="content_3106712" style="">
+                        <div class="content lists">
+                          <h2 class="h2-style">Hide Header</h2>
+                          <div class="content-wrap">
+                            <h3 class="h3-style element-invisible">List of 1 items.</h3>
+                            <ul>
+                              <li class="group in-view top-of-page bottom-of-page has-been-viewed">
+                                <img class="" src="//bbk12e1-cdn.myschoolcdn.com/ftpimages/286/list/large_list202532_46234.jpg" alt="">
+                                <h4 class="h4-style ">Auto Lightbox List</h4>
+                                <div class="brief-description">Brief description donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</div>
+                                <div class="long-description">Long description sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede. </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="__AjaxAntiForgery">
+      <input name="__RequestVerificationToken" type="hidden" value="PRNZVvj5L5SMnxybpKHwwor5vYpfqRZ1RxcKgHTfn4LhSD_QYWWbB7_DwEM19CmnuovyN3yy33xeka8nFEISGwtKBUuuHq5eIBZ8ZeRGGF41 734be9e9-e3e8-4686-8128-43fc8b86a0f9">
+    </div>
+  </body>
+</html>
