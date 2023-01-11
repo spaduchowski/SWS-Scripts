@@ -9,6 +9,8 @@ function createAutoEventLightbox(autoLightboxStyle, autoLightboxClass, autoLight
        return;
     }   
 
+    //convert seconds to milliseconds
+    var autoLightboxDelay = autoLightboxDelay * 1000;
 
     /**
      * 12h to 2h4 Time Conversion Function

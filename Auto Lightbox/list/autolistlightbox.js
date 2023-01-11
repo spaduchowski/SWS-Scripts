@@ -9,6 +9,10 @@ function createAutoListLightbox(autoLightboxStyle, autoLightboxClass, autoLightb
        return;
     }   
 
+    //convert seconds to milliseconds
+    var autoLightboxDelay = autoLightboxDelay * 1000;
+
+
     /**
      * Create Dynamic "Cookie" Using
      * List Title & Character Count
