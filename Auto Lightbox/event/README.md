@@ -1,23 +1,23 @@
 # Implementation Instructions
 Place the following code in the Head Tracking Code box in Site Settings.
 
-`<!-- SimpleLightbox JS-->`
-`<script type="text/javascript" src="//whthemes.myschoolapp.com/ftpimages/492/download/download_8162735.js"></script>`
-`<!-- SimpleLightbox CSS-->`
-`<link rel="stylesheet" type="text/css" href="//whthemes.myschoolapp.com/ftpimages/492/download/download_8162736.css">`
+`<!-- SimpleLightbox JS-->`<br>
+`<script type="text/javascript" src="//whthemes.myschoolapp.com/ftpimages/492/download/download_8162735.js"></script>`<br>
+`<!-- SimpleLightbox CSS-->`<br>
+`<link rel="stylesheet" type="text/css" href="//whthemes.myschoolapp.com/ftpimages/492/download/download_8162736.css">`<br>
 
-`<!--auto event lightbox-->`
-`<script src="//whthemes.myschoolapp.com/ftpimages/492/download/download_8160978.js" defer=""></script>`
-`<script>`
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`document.addEventListener("DOMContentLoaded", function () {`
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`createAutoEventLightbox(87448, 'autolightbox', 2);`
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`});`
+`<!--auto event lightbox-->`<br>
+`<script src="//whthemes.myschoolapp.com/ftpimages/492/download/download_8160978.js" defer=""></script>`<br>
+`<script>`<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`document.addEventListener("DOMContentLoaded", function () {`<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`createAutoEventLightbox(87448, 'autolightbox', 2);`<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`});`<br>
 `</script>`
 
 ### General Notes
 - There are three required parameters for the createAutoEventLightbox function.
 - The first is your style number.
-- The second is the class name given to the outermost div of the lightbox. (autolightbox is used in below CSS - this can be whatever you want)
+- The second is the class name given to the outermost div of the lightbox. (autolightbox is used in below CSS, but this can be whatever you want)
 - The third is the delay in seconds. (currently set to 2 seconds - half seconds or decimals will not work)
 <br>
 - The lightbox will display during the date and time selected in event widget.
