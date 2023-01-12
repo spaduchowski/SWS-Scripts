@@ -29,7 +29,8 @@ Place the following code in the Head Tracking Code box in Site Settings.
 - The lightbox will display during the date and time selected in event widget.
 - Start Date and End Date are required fields. Start Time and End Time are optional.
 - If a user clicks the Stop Showing This Popup link, it will no longer display.
-- If the school makes changes to Event Title, Dates or Description, the popup will once again display for any user who clicked the Stop Showing This Popup link.
+- The "cookie" that is set uses the Event Title, Event Date, Time set in widget, and character count of entire block.
+- If the school makes changes to the Header, Event Title, Dates or Description, the popup will once again display for any user who clicked the Stop Showing This Popup link.
 
 ### CSS
 - The majority of styling can be completed in the style you have created for the lightbox.

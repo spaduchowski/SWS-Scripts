@@ -27,7 +27,8 @@ Place the following code in the Head Tracking Code box in Site Settings.
 
 ### General Notes
 - If a user clicks the Stop Showing This Popup link, it will no longer display.
-- If the school makes changes to List Title, Brief or Long Description, the popup will once again display for any user who clicked the Stop Showing This Popup link.
+- The "cookie" that is set uses List Title and character count of entire block.
+- If the school makes changes to the Header, List Title, Brief or Long Description, the popup will once again display for any user who clicked the Stop Showing This Popup link.
 
 ### CSS
 - The majority of styling can be completed in the style you have created for the lightbox.
