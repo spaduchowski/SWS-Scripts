@@ -10,7 +10,7 @@ Place the following code in the Head Tracking Code box in Site Settings.
 <!-- SimpleLightbox CSS-->
 <link rel="stylesheet" type="text/css" href="//whthemes.myschoolapp.com/ftpimages/492/download/download_8162736.css">
 
-<!--auto event lightbox-->
+<!--auto list lightbox-->
 <script src="//whthemes.myschoolapp.com/ftpimages/492/download/download_8160981.js" defer=""></script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -20,7 +20,7 @@ Place the following code in the Head Tracking Code box in Site Settings.
 ```
 
 ### Settings
-- There are three required parameters for the createAutoEventLightbox function.
+- There are three required parameters for the createAutoListLightbox function.
 - The first is your style number.
 - The second is the class name given to the outermost div of the lightbox. (autolightbox is used in below CSS, but this can be whatever you want)
 - The third is the delay in seconds. (currently set to 2 seconds - half seconds or decimals will not work)
