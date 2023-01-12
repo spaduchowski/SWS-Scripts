@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" class="body normal">
+  <head>
+    <title>Auto Event Lightbox</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="noindex" name="robots">
+    <link rel="stylesheet" type="text/css" href="//libs-w2.myschoolapp.com/bootstrap/2.1.1/css/bootstrap.24col.min.css">
+    <link rel="stylesheet" type="text/css" href="//libs-w2.myschoolapp.com/jquery-flexslider/2.10/jquery.flexslider-min.css">
+    <link rel="stylesheet" type="text/css" href="//libs-w2.myschoolapp.com/video/7.4.3/video-js.css">
+    <link rel="stylesheet" type="text/css" href="//libs-w2.myschoolapp.com/jquery-background-carousel/1.2/background-carousel.css">
+    <link rel="stylesheet" type="text/css" href="//libs-w2.myschoolapp.com/jquery-jplayer/2.4.1/morning.light/jplayer.morning.light.css">
+    <link rel="stylesheet" type="text/css" href="//libs-w2.myschoolapp.com/images/jPlayer/p3.morning.light.css">
+    <link rel="stylesheet" type="text/css" href="//src-e1.myschoolapp.com/1.52.23009.9/minify/page-main.css">
+    <style type="text/css">
+      .body {font-size: 16px;line-height: 1.5;}.h1-style {line-height: 1.2;margin: 0 0 .5em 0;}.h2-style {line-height: 1.2;margin: 0 0 .5em 0;}.h3-style {line-height: 1.2;margin: .5em 0 .5em 0;}.h4-style {line-height: 1.2;margin: 0 0 .5em 0;}.h5-style {line-height: 1.2;margin: 0 0 .5em 0;}.h6-style {line-height: 1.2;margin: 0 0 .5em 0;}A {color: #86CC2B;text-decoration: underline;-webkit-transition: color .3s ease;transition: color .3s ease;}A:hover {color: inherit;text-decoration: none;}.button {padding: .5em 1em;margin: .5rem 0 .25rem 0;color: #fff;border: none;background-color: #333;-webkit-transition: background .3s ease, color .3s ease;transition: background .3s ease, color .3s ease;}.button:hover {color: #FFFFFF;background-color: #86CC2B;}
+
+
+
+      /* Begin Auto Lightbox Styles */
+
+
+      /* Adjust Width of Lightbox  */
+      .autolightbox .slbContent {
+        width: clamp(40vw, 400px, 95vw);
+      }
+
+      /*Hide H2, This can be done in styler*/
+      .autolightbox .h2-style {
+        display: none
+      }
+
+      /* Display Page Block Content in Styler, Not Page*/
+      .style-101677 {
+        display: none;
+      }
+      .styler .style-101677 {
+        display: block;
+      }
+
+      /* Display Page Block Content in Lightbox */
+      .slbWrapOuter .style-101677 {
+        display: block;
+      }
+
+      /* Stop Showing Link Div*/
+      .stop-showing {
+      }
+
+      /*Adding Background Color, This can be done in styler.*/
+      .style-101677 {
+        background-color: #fff;
+      }
+
+    </style>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/headJs/1.0.3.cd/head.min.js"></script>
+    <style type="text/css" id="operaUserStyle"></style>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/jquery/2.2.4/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/handlebars/3.0.3/handlebars.min.js"></script>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/underscore/1.8.3/underscore-min.js"></script>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/backbone/1.1.2/backbone-min.js"></script>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/backbone-validation/0.11.3/backbone-validation-min.js"></script>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/jquery-flexslider/2.10/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/video/7.4.3/video.min.js"></script>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/video/share/1.5/share.video.min.js"></script>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/jquery-simplemodal/1.4.5/jquery.simplemodal.1.4.5.min.js"></script>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/jquery-background-carousel/1.2/jquery.background.carousel.js"></script>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/jquery-jplayer/2.4.1/jquery.jplayer.js"></script>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/jqueryui/1.9.2/jquery-ui-1.9.2.min.js"></script>
+    <script type="text/javascript" src="//libs-w2.myschoolapp.com/jquery-waitforimages/1.5/jquery.waitforimages.js"></script>
+    <script type="text/javascript" src="//src-e1.myschoolapp.com/1.52.23009.9/minify/page-main.js"></script>
+    <!-- SimpleLightbox JS-->
+    <script type="text/javascript" src="//whthemes.myschoolapp.com/ftpimages/492/download/download_8162735.js"></script>
+    <!-- SimpleLightbox CSS-->
+    <link rel="stylesheet" type="text/css" href="//whthemes.myschoolapp.com/ftpimages/492/download/download_8162736.css">
+    <script src="../autoeventlightbox.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        createAutoEventLightbox(101677, 'autolightbox', 2);
+      });
+    </script>
+  </head>
+  <body class="body ">
+    <div class="layout" id="layout_9881">
+      <div class="region layout-region in-view top-of-page bottom-of-page has-been-viewed" id="layout_region_0">
+        <div class="container">
+          <div class="layout-row row in-view top-of-page bottom-of-page has-been-viewed">
+            <div class="last-col first-col layout-col span24 col">
+              <div class="layout-block clearfix in-view top-of-page bottom-of-page has-been-viewed" data-cid="390" id="content_98968">
+                <div class="layout_block_98968 region page-region in-view top-of-page bottom-of-page has-been-viewed" id="page_region_170109"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="region layout-region in-view bottom-of-page has-been-viewed" id="layout_region_1">
+        <div class="full-width">
+          <div class="layout-row row-fluid">
+            <div class="last-col first-col layout-col span24 col">
+              <div class="layout-block clearfix in-view bottom-of-page has-been-viewed" data-cid="390" id="content_156991">
+                <div class="layout_block_156991 region page-region in-view bottom-of-page has-been-viewed" id="page_region_170110">
+                  <div class="page-row row in-view bottom-of-page has-been-viewed">
+                    <div class="last-col first-col page-col span24 col">
+                      <div class="page-block style-101677 clearfix in-view top-of-page bottom-of-page has-been-viewed" data-cid="5" id="content_3105304" style="">
+                        <div class="content events">
+                          <h2 class="h2-style">newpopup</h2>
+                          <div class="content-wrap">
+                            <h3 class="h3-style element-invisible">List of 1 events.</h3>
+                            <ul class="no-bullets">
+                              <li class="group in-view top-of-page bottom-of-page has-been-viewed">
+                                <div class="event-detail left">
+                                  <h4 class="h4-style event-title">
+                                    <a href="/page/event-detail?pk=20783233&amp;fromId=287444&amp;siteId=1449">Open House</a>
+                                  </h4>
+                                  <time>
+                                    <span class="start-date">1/10/2023</span>
+                                    <span class="start-time">6:39 PM</span>
+                                    <span class="date-sep">to</span>
+                                    <span class="end-date">1/11/2028</span>
+                                    <span class="end-time">7:00 PM</span>
+                                  </time>
+                                  <div class="brief-description">Visit CM at our open house events <br>on October 16 and 17. Bring the entire family. <br>
+                                    <a href="https://www.catholicmemorial.org/admissions/admissions-events" class="button">Learn More</a>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

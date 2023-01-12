@@ -98,7 +98,7 @@ Place the following code in the Head Tracking Code box in Site Settings.
 3. Look for `createAutoEventLightbox(101677, 'autolightbox', 2);`.
 4. Adjust the last number before closing paranthesis to the desired seconds.
 5. Half seconds or decimals will not work.
- 
+
 ##### To edit existing call-to-action button
 1. Select text with mouse.
 2. Click three dot icon to expand menu.
