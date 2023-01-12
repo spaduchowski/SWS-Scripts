@@ -47,7 +47,7 @@ Place the following code in the Head Tracking Code box in Site Settings.
     width: clamp(40vw, 400px, 95vw);
 }
 
-/* Display Page Block Content in Styler, Not Page*/
+/* Replace with your style number! Display Page Block Content in Styler, Not Page*/
 .style-101677 {
     display: none;
 }
@@ -55,7 +55,7 @@ Place the following code in the Head Tracking Code box in Site Settings.
     display: block;
 }
 
-/* Display Page Block Content in Lightbox */
+/* Replace with your style number! Display Page Block Content in Lightbox */
 .slbWrapOuter .style-101677 {
     display: block;
 }
