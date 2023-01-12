@@ -86,21 +86,21 @@ Place the following code in the Head Tracking Code box in Site Settings.
 10. Select SPL: Auto Lightbox.*
 11. Save page.
  
-##### To adjust popup delay
+### To adjust popup delay
 1. Click the Site Settings tab.
 2. Scroll to Head Tracking Code box under Website Analytics. 
 3. Look for `createAutoListLightbox(101677, 'autolightbox', 2);`.
 4. Adjust the last number before closing paranthesis to desired seconds.
 5. Half seconds or decimals will not work.
 
-##### To edit existing call-to-action button
+### To edit existing call-to-action button
 1. Select text with mouse.
 2. Click three dot icon to expand menu.
 3. Click link icon.
 4. Edit URL and Text to display fields.
 5. Click Save.
  
-##### To create call-to-action button
+### To create call-to-action button
 1. Type button text in details box.
 2. Select this text with mouse.
 3. Click three dot icon to expand menu.
