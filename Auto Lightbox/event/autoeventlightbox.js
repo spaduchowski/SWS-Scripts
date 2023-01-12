@@ -28,7 +28,8 @@ function createAutoEventLightbox(autoLightboxStyle, autoLightboxClass, autoLight
     }
 
     //get current date & time
-    var curDateTime = Date.now();
+    var curDateTime = Number(new Date());
+    console.log(curDateTime)
 
 
 
@@ -53,12 +54,13 @@ function createAutoEventLightbox(autoLightboxStyle, autoLightboxClass, autoLight
     startDate = startDate.replace(/\//g, ",");
     //convert start time
     startTime = convertTime12to24(startTime);
+    console.log(startTime)
     //combine start date & time
     var combineStarts = startDate + ' ' + startTime;
     //convert to date format then seconds
     combineStarts = new Date(combineStarts);
     combineStarts = combineStarts.getTime();
-
+    console.log(combineStarts)
 
 
     /**
@@ -82,11 +84,14 @@ function createAutoEventLightbox(autoLightboxStyle, autoLightboxClass, autoLight
     endDate = endDate.replace(/\//g, ",");
     //convert end time
     endTime = convertTime12to24(endTime);
+    console.log(endTime)
+
     //combine end date and time
     var combineEnds = endDate + ' ' + endTime;
     //convert to date format then seconds
     combineEnds = new Date(combineEnds);
     combineEnds = combineEnds.getTime();
+    console.log(combineEnds)
 
 
     /**
