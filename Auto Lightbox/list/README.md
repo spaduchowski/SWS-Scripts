@@ -1,3 +1,6 @@
+# Example
+[Auto List Lightbox Example](https://spaduchowski.github.io/SWS-Scripts/Auto%20Lightbox/list/example/index.html)
+
 # Implementation Instructions
 Place the following code in the Head Tracking Code box in Site Settings.
 
