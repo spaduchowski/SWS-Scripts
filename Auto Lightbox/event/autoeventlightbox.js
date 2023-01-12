@@ -84,7 +84,7 @@ function createAutoEventLightbox(autoLightboxStyle, autoLightboxClass, autoLight
     endDate = endDate.replace(/\//g, ",");
     //convert end time
     endTime = convertTime12to24(endTime);
-    console.log(endTime)
+    console.log("endTime = " + endTime)
 
     //combine end date and time
     var combineEnds = endDate + ' ' + endTime;
