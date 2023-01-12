@@ -24,7 +24,7 @@ function createAutoEventLightbox(autoLightboxStyle, autoLightboxClass, autoLight
         if (modifier === 'PM') {
             hours = parseInt(hours, 10) + 12;
         }
-        return `${hours}:${minutes}`;
+        return `${hours},${minutes}`;
     }
 
     //get current date & time
@@ -50,17 +50,41 @@ function createAutoEventLightbox(autoLightboxStyle, autoLightboxClass, autoLight
         var startTime = "12:01 AM";
     }
 
-    //remove date slashes
+    //replace date slashes with comma
     startDate = startDate.replace(/\//g, ",");
-    //convert start time
+
+    //convert start time from 12hr to 24hr
     startTime = convertTime12to24(startTime);
-    console.log("startTime = " + startTime)
-    //combine start date & time
-    var combineStarts = startDate + ' ' + startTime;
-    //convert to date format then seconds
-    combineStarts = new Date(combineStarts);
-    combineStarts = combineStarts.getTime();
-    console.log("comebineStarts = " + combineStarts)
+
+    // convert start time to array
+    var startTimeArray = startTime.split(',');
+
+    //convert start date to array
+    var startDateArray = startDate.split(',');
+
+    //javascript creators hate us because they used a 0-11 index for month
+    var newStartMonthIndex = parseInt(startDateArray[0]);
+    newStartMonthIndex -= 1;
+
+    //we have to convert to string before we can create array
+    newStartMonthIndexArray = newStartMonthIndex.toString();
+
+    //create array so we can insert
+    var finalStartMonthIndexArr = new Array(newStartMonthIndexArray);
+
+    //reorg start date and time to year, month, day, hour, minutes
+    var reorgStartDateTimeArray = [startDateArray[2], finalStartMonthIndexArr[0], startDateArray[1], startTimeArray[0], startTimeArray[1]];    
+   
+    //final integer array
+    var finalStartIntegerArray = reorgStartDateTimeArray.map(function (x) { 
+        return parseInt(x, 10); 
+    });
+
+    //final start date time
+    var finalStartDateTime = new Date(finalStartIntegerArray[0],finalStartIntegerArray[1],finalStartIntegerArray[2],finalStartIntegerArray[3],finalStartIntegerArray[4]);
+    var finalStartDateTimeMilli = finalStartDateTime.getTime();
+    console.log("final start date time = " + finalStartDateTime)
+    console.log("final start date time milli = " + finalStartDateTimeMilli)
 
 
     /**
@@ -82,16 +106,39 @@ function createAutoEventLightbox(autoLightboxStyle, autoLightboxClass, autoLight
 
     //remove date slashes
     endDate = endDate.replace(/\//g, ",");
+    
     //convert end time
     endTime = convertTime12to24(endTime);
-    console.log("endTime = " + endTime)
 
-    //combine end date and time
-    var combineEnds = endDate + ' ' + endTime;
-    //convert to date format then seconds
-    combineEnds = new Date(combineEnds);
-    combineEnds = combineEnds.getTime();
-    console.log(combineEnds)
+    // convert end time to array
+    var endTimeArray = endTime.split(',');
+
+    //convert end date to array
+    var endDateArray = endDate.split(',');
+
+    //javascript creators hate us because they used a 0-11 index for month
+    var newEndMonthIndex = parseInt(endDateArray[0]);
+    newEndMonthIndex -= 1;
+
+    //we have to convert to string before we can create array
+    newEndMonthIndexArray = newEndMonthIndex.toString();
+
+    //create array so we can insert
+    var finalEndMonthIndexArr = new Array(newEndMonthIndexArray);
+
+    //reorg end date and time to year, month, day, hour, minutes
+    var reorgEndDateTimeArray = [endDateArray[2], finalEndMonthIndexArr[0], endDateArray[1], endTimeArray[0], endTimeArray[1]];
+    
+    //final integer array
+    var finalEndIntegerArray = reorgEndDateTimeArray.map(function (x) { 
+        return parseInt(x, 10); 
+    });
+
+    //final end date time
+    var finalEndDateTime = new Date(finalEndIntegerArray[0],finalEndIntegerArray[1],finalEndIntegerArray[2],finalEndIntegerArray[3],finalEndIntegerArray[4]);
+    var finalEndDateTimeMilli = finalEndDateTime.getTime();
+    console.log("final end date time = " + finalEndDateTime)
+    console.log("final end date time milli = " + finalEndDateTimeMilli)
 
 
     /**
@@ -111,7 +158,7 @@ function createAutoEventLightbox(autoLightboxStyle, autoLightboxClass, autoLight
 
 
     //add event date and time and attach to cookie
-    var dateTimeCombi = combineStarts + combineEnds;
+    var dateTimeCombi = finalStartDateTimeMilli + finalEndDateTimeMilli;
     autoCookie += dateTimeCombi;
     //get character count
     checkReqEl = checkReqEl.innerHTML.length;
@@ -156,12 +203,12 @@ function createAutoEventLightbox(autoLightboxStyle, autoLightboxClass, autoLight
 
 
     //load popup between start date&time and end date, if cookie has been set, don't load
-    if (setCookieValue != 'true' && curDateTime >= combineStarts && curDateTime <= combineEnds) {
+    if (setCookieValue != 'true' && curDateTime >= finalStartDateTimeMilli && curDateTime <= finalEndDateTimeMilli) {
         setTimeout(function() {
             autoLightbox.show();
         }, autoLightboxDelay)
         console.log("Auto Event Lightbox is currently displaying.")
-    } else if ((curDateTime <= combineStarts) || (curDateTime >= combineEnds)) {
+    } else if ((curDateTime <= finalStartDateTimeMilli) || (curDateTime >= finalEndDateTimeMilli)) {
         console.log("Auto Event Lightbox does not display during this time window.")
     } else {
         console.log("User clicked stop showing link.");
